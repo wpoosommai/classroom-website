@@ -1,0 +1,2002 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ห้องเรียนออนไลน์ ครูวีระวัฒน์ ภูสมหมาย | สาขาเทคโนโลยีอิเล็กทรอนิกส์ วท.ศรีสะเกษ</title>
+<meta name="description" content="ห้องเรียนออนไลน์ของครูวีระวัฒน์ ภูสมหมาย แผนกวิชาเทคโนโลยีอิเล็กทรอนิกส์ วิทยาลัยเทคนิคศรีสะเกษ ภาคเรียนที่ 1 ปีการศึกษา 2569" />
+<meta property="og:title" content="ห้องเรียนออนไลน์ ครูวีระวัฒน์ ภูสมหมาย" />
+<meta property="og:description" content="แหล่งรวมแผนการสอน เอกสาร ใบงาน และแบบทดสอบของแผนกวิชาเทคโนโลยีอิเล็กทรอนิกส์" />
+<meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E📚%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Sarabun', 'TH SarabunPSK', 'sans-serif'],
+        mono: ['IBM Plex Mono', 'Consolas', 'monospace'],
+      },
+      colors: {
+        brand: {
+          50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe',
+          300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1',
+          600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81',
+        },
+        prog: '#0EA5E9', robot: '#F97316', safety: '#16A34A',
+        pneu: '#1E40AF', intf: '#7C3AED',
+        basic: '#DC2626', scada: '#06B6D4', analyze: '#EC4899',
+      }
+    }
+  }
+}
+</script>
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Sarabun', 'TH SarabunPSK', sans-serif; -webkit-font-smoothing: antialiased; }
+  .gradient-text { background: linear-gradient(135deg, #6366f1, #ec4899); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .card-hover { transition: all 0.3s ease; }
+  .card-hover:hover { transform: translateY(-4px); box-shadow: 0 20px 40px -10px rgba(0,0,0,0.15); }
+  .fade-in { animation: fadeIn 0.6s ease-out; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .week-pill { transition: all 0.2s ease; }
+  .scrollbar-thin::-webkit-scrollbar { width: 6px; height: 6px; }
+  .scrollbar-thin::-webkit-scrollbar-track { background: #f1f5f9; }
+  .scrollbar-thin::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+  .hero-bg {
+    background:
+      radial-gradient(circle at 20% 30%, rgba(99,102,241,0.15), transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(236,72,153,0.12), transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba(14,165,233,0.12), transparent 50%);
+  }
+  .dark .hero-bg {
+    background:
+      radial-gradient(circle at 20% 30%, rgba(99,102,241,0.25), transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(236,72,153,0.22), transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba(14,165,233,0.22), transparent 50%);
+  }
+  .subj-prog { --c: #0EA5E9; --c-light: #E0F2FE; --c-dark: #0c4a6e; }
+  .subj-robot { --c: #F97316; --c-light: #FED7AA; --c-dark: #7c2d12; }
+  .subj-safety { --c: #16A34A; --c-light: #DCFCE7; --c-dark: #14532d; }
+  .subj-pneu { --c: #1E40AF; --c-light: #DBEAFE; --c-dark: #1e3a8a; }
+  .subj-intf { --c: #7C3AED; --c-light: #EDE9FE; --c-dark: #4c1d95; }
+  .subj-basic { --c: #DC2626; --c-light: #FEE2E2; --c-dark: #7f1d1d; }
+  .subj-scada { --c: #06B6D4; --c-light: #CFFAFE; --c-dark: #164e63; }
+  .subj-analyze { --c: #EC4899; --c-light: #FCE7F3; --c-dark: #831843; }
+  .subj-color { background-color: var(--c); }
+  .subj-color-light { background-color: var(--c-light); }
+  .dark .subj-color-light { background-color: var(--c-dark); }
+  .subj-text { color: var(--c); }
+  .subj-border { border-color: var(--c); }
+  .modal-overlay { background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); }
+  @media print { .no-print { display: none !important; } }
+</style>
+</head>
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 transition-colors">
+
+<!-- ============ NOTIFICATION BANNER ============ -->
+<div id="banner" class="hidden bg-gradient-to-r from-amber-500 to-orange-500 text-white text-sm px-4 py-2 text-center no-print">
+  <span id="bannerText"></span>
+  <button id="bannerClose" class="ml-2 underline opacity-90 hover:opacity-100">ปิด</button>
+</div>
+
+<!-- ============ HEADER ============ -->
+<header class="sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
+    <div class="flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-3">
+        <div class="w-11 h-11 bg-gradient-to-br from-brand-500 to-pink-500 rounded-xl flex items-center justify-center text-white text-xl font-bold shadow-lg">📚</div>
+        <div class="hidden sm:block">
+          <div class="font-bold text-slate-900 dark:text-white leading-tight">ห้องเรียนครูวีระวัฒน์</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400">สาขาเทคโนโลยีอิเล็กทรอนิกส์ วท.ศรีสะเกษ</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-1">
+        <a href="#home" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-brand-50 dark:hover:bg-slate-800 rounded-lg transition">หน้าแรก</a>
+        <a href="#subjects" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-brand-50 dark:hover:bg-slate-800 rounded-lg transition">รายวิชา</a>
+        <a href="#news" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-brand-50 dark:hover:bg-slate-800 rounded-lg transition">ข่าวสาร</a>
+        <a href="#electric" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-brand-50 dark:hover:bg-slate-800 rounded-lg transition">ควบคุมไฟฟ้า</a>
+        <a href="#resources" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-brand-50 dark:hover:bg-slate-800 rounded-lg transition">แหล่งเรียนรู้</a>
+        <a href="#teacher" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-brand-50 dark:hover:bg-slate-800 rounded-lg transition">ผู้สอน</a>
+        <a href="#sponsor" class="px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-brand-50 dark:hover:bg-slate-800 rounded-lg transition">ผู้สนับสนุน</a>
+        <button id="searchBtn" class="ml-2 p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition" aria-label="ค้นหา">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </button>
+        <button id="themeBtn" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition" aria-label="โหมดสี">
+          <svg id="iconSun" class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg id="iconMoon" class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+        <a id="discordBtnHeader" href="#" target="_blank" class="ml-2 px-4 py-2 text-sm font-semibold text-white bg-[#5865F2] hover:bg-[#4752C4] rounded-lg transition shadow-md flex items-center gap-2">
+          <svg class="w-4 h-4" viewBox="0 0 71 55" fill="currentColor"><path d="M60.1 4.9A58.5 58.5 0 0 0 45.6.4l-1.8 3.7a54 54 0 0 0-16 0L26 .4a58.5 58.5 0 0 0-14.5 4.5C2.4 18.3-.6 31.3.8 44.1c6 4.5 11.9 7.2 17.7 9 1.4-1.9 2.7-4 3.8-6.2-2-.7-4-1.6-5.7-2.7l1.4-1.1c11 5.2 23 5.2 33.8 0l1.4 1.1c-1.8 1.1-3.7 2-5.7 2.7 1.1 2.2 2.4 4.3 3.8 6.2 5.8-1.8 11.7-4.5 17.7-9C71.5 29.1 66.6 16.1 60.1 4.9z"/></svg>
+          Discord
+        </a>
+      </nav>
+      <div class="flex md:hidden items-center gap-1">
+        <button id="searchBtnMobile" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="ค้นหา">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+        </button>
+        <button id="themeBtnMobile" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="โหมดสี">
+          <svg class="w-5 h-5 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+          <svg class="w-5 h-5 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"/></svg>
+        </button>
+        <button id="menuBtn" class="p-2 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800" aria-label="Menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobileMenu" class="hidden md:hidden mt-3 pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-1">
+      <a href="#home" class="px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">หน้าแรก</a>
+      <a href="#subjects" class="px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">รายวิชา</a>
+      <a href="#news" class="px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">ข่าวสาร</a>
+      <a href="#electric" class="px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">ควบคุมไฟฟ้า</a>
+      <a href="#resources" class="px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">แหล่งเรียนรู้</a>
+      <a href="#teacher" class="px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">ผู้สอน</a>
+      <a href="#sponsor" class="px-3 py-2 text-sm font-medium hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg">ผู้สนับสนุน</a>
+      <a href="#contact" class="px-3 py-2 text-sm font-medium text-brand-600 hover:bg-brand-50 dark:hover:bg-slate-800 rounded-lg">ติดต่อ</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="home" class="hero-bg relative overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <div class="fade-in">
+        <span class="inline-block px-4 py-1.5 bg-brand-100 dark:bg-brand-900/40 text-brand-700 dark:text-brand-300 rounded-full text-sm font-semibold mb-4">⚡ ภาคเรียนที่ 1 / 2569</span>
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mb-6">
+          <span class="text-slate-900 dark:text-white">ห้องเรียนออนไลน์</span><br/>
+          <span class="gradient-text">แผนกเทคโนโลยีอิเล็กทรอนิกส์</span>
+        </h1>
+        <p class="text-lg text-slate-600 dark:text-slate-400 mb-8 leading-relaxed">
+          แหล่งรวมแผนการสอน ใบความรู้ PowerPoint ใบงาน และแบบทดสอบ
+          ของวิชา ปวส. สาขางานอิเล็กทรอนิกส์อุตสาหกรรม
+          <br/>โดย <strong class="text-slate-900 dark:text-white">นายวีระวัฒน์ ภูสมหมาย</strong> ครูชำนาญการพิเศษ วิทยาลัยเทคนิคศรีสะเกษ
+        </p>
+        <div class="flex flex-wrap gap-3">
+          <a href="#subjects" class="px-6 py-3 bg-brand-600 hover:bg-brand-700 text-white font-semibold rounded-xl shadow-lg shadow-brand-200 dark:shadow-none transition flex items-center gap-2">
+            เริ่มเรียน
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+          <a id="discordBtn" href="#" target="_blank" class="px-6 py-3 bg-[#5865F2] hover:bg-[#4752C4] text-white font-semibold rounded-xl shadow-lg transition flex items-center gap-2">
+            <svg class="w-5 h-5" viewBox="0 0 71 55" fill="currentColor"><path d="M60.1 4.9A58.5 58.5 0 0 0 45.6.4l-1.8 3.7a54 54 0 0 0-16 0L26 .4a58.5 58.5 0 0 0-14.5 4.5C2.4 18.3-.6 31.3.8 44.1c6 4.5 11.9 7.2 17.7 9 1.4-1.9 2.7-4 3.8-6.2-2-.7-4-1.6-5.7-2.7l1.4-1.1c11 5.2 23 5.2 33.8 0l1.4 1.1c-1.8 1.1-3.7 2-5.7 2.7 1.1 2.2 2.4 4.3 3.8 6.2 5.8-1.8 11.7-4.5 17.7-9C71.5 29.1 66.6 16.1 60.1 4.9z"/></svg>
+            เข้า Discord
+          </a>
+        </div>
+        <div class="grid grid-cols-4 gap-4 mt-12 pt-8 border-t border-slate-200 dark:border-slate-700">
+          <div><div class="text-3xl font-bold text-brand-600 dark:text-brand-400">2</div><div class="text-sm text-slate-500 dark:text-slate-400">ผู้สอน</div></div>
+          <div><div class="text-3xl font-bold text-pink-600 dark:text-pink-400">8</div><div class="text-sm text-slate-500 dark:text-slate-400">รายวิชา</div></div>
+          <div><div class="text-3xl font-bold text-emerald-600 dark:text-emerald-400">15</div><div class="text-sm text-slate-500 dark:text-slate-400">สัปดาห์</div></div>
+          <div><div class="text-3xl font-bold text-amber-600 dark:text-amber-400">59</div><div class="text-sm text-slate-500 dark:text-slate-400">ชม./สัปดาห์</div></div>
+        </div>
+      </div>
+      <div class="relative hidden lg:block fade-in">
+        <div class="absolute inset-0 bg-gradient-to-br from-brand-200 to-pink-200 dark:from-brand-900 dark:to-pink-900 rounded-3xl rotate-3 opacity-30"></div>
+        <div class="relative bg-white dark:bg-slate-800 rounded-3xl shadow-2xl p-8 grid grid-cols-2 gap-4">
+          <div class="bg-prog/10 p-4 rounded-2xl border-l-4 border-prog">
+            <div class="text-3xl mb-2">💻</div>
+            <div class="font-bold text-slate-900 dark:text-white">การเขียนโปรแกรม</div>
+            <div class="text-sm text-slate-500 dark:text-slate-400">30105-2006</div>
+          </div>
+          <div class="bg-robot/10 p-4 rounded-2xl border-l-4 border-robot">
+            <div class="text-3xl mb-2">🤖</div>
+            <div class="font-bold text-slate-900 dark:text-white">หุ่นยนต์อุตสาหกรรม</div>
+            <div class="text-sm text-slate-500 dark:text-slate-400">30105-2007</div>
+          </div>
+          <div class="bg-safety/10 p-4 rounded-2xl border-l-4 border-safety">
+            <div class="text-3xl mb-2">🦺</div>
+            <div class="font-bold text-slate-900 dark:text-white">ความปลอดภัย</div>
+            <div class="text-sm text-slate-500 dark:text-slate-400">30100-1018</div>
+          </div>
+          <div class="bg-pneu/10 p-4 rounded-2xl border-l-4 border-pneu">
+            <div class="text-3xl mb-2">⚙️</div>
+            <div class="font-bold text-slate-900 dark:text-white">นิวเมติกส์</div>
+            <div class="text-sm text-slate-500 dark:text-slate-400">30100-1020</div>
+          </div>
+          <div class="col-span-2 bg-intf/10 p-4 rounded-2xl border-l-4 border-intf">
+            <div class="flex items-center gap-3">
+              <div class="text-3xl">🔌</div>
+              <div>
+                <div class="font-bold text-slate-900 dark:text-white">เทคนิคการอินเตอร์เฟซ</div>
+                <div class="text-sm text-slate-500 dark:text-slate-400">30105-2004</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWS / ANNOUNCEMENTS ============ -->
+<section id="news" class="py-16 lg:py-20 bg-white dark:bg-slate-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-end justify-between mb-8">
+      <div>
+        <span class="inline-block px-4 py-1.5 bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300 rounded-full text-sm font-semibold mb-3">📢 ข่าวสาร</span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">ประกาศและข่าวสาร</h2>
+      </div>
+      <div class="text-sm text-slate-500 dark:text-slate-400 hidden sm:block" id="lastUpdated">อัปเดต: -</div>
+    </div>
+    <div id="newsList" class="grid md:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+  </div>
+</section>
+
+<!-- ============ SUBJECTS ============ -->
+<section id="subjects" class="py-16 lg:py-24">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="inline-block px-4 py-1.5 bg-brand-100 dark:bg-brand-900/40 text-brand-700 dark:text-brand-300 rounded-full text-sm font-semibold mb-4">📚 รายวิชา</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">รายวิชาที่เปิดสอน</h2>
+      <p class="text-slate-600 dark:text-slate-400">คลิกที่การ์ดเพื่อดูเนื้อหา แผนการสอน เอกสาร และแบบทดสอบของแต่ละวิชา</p>
+    </div>
+    <div id="subjectGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+  </div>
+</section>
+
+<!-- ============ SCHEDULE ============ -->
+
+<!-- ============ CLASSROOM ELECTRICAL CONTROL ============ -->
+<section id="electric" class="py-16 lg:py-24 bg-slate-100 dark:bg-slate-950/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-3xl mx-auto mb-12">
+      <span class="inline-block px-4 py-1.5 bg-yellow-100 dark:bg-yellow-900/40 text-yellow-700 dark:text-yellow-300 rounded-full text-sm font-semibold mb-4">⚡ ระบบควบคุมไฟฟ้า</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">ระบบควบคุมไฟฟ้าในห้องเรียน</h2>
+      <p class="text-slate-600 dark:text-slate-400">แผงควบคุมจำลองสำหรับไฟฟ้า แอร์ พัดลม โปรเจกเตอร์ และปลั๊กไฟ ใช้เป็นต้นแบบต่อยอดกับ ESP32 / MQTT / Relay Board ได้</p>
+    </div>
+
+    <div class="grid lg:grid-cols-3 gap-6 mb-8">
+      <div class="lg:col-span-2 bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm border border-slate-200 dark:border-slate-700 relative">
+        <!-- Security Lock Overlay -->
+        <div id="electricLockOverlay" class="absolute inset-0 z-20 bg-slate-900/80 backdrop-blur-sm rounded-3xl flex items-center justify-center flex-col p-6 text-center">
+          <div class="text-5xl mb-4">🔒</div>
+          <h3 class="text-2xl font-bold text-white mb-2">ระบบล็อก</h3>
+          <p class="text-slate-300 mb-5 max-w-sm text-sm">เฉพาะครู/ผู้ดูแลห้องเรียน สามารถควบคุมระบบไฟฟ้าได้</p>
+          <div class="flex flex-col sm:flex-row gap-2 w-full max-w-xs">
+            <input id="electricPin" type="password" inputmode="numeric" maxlength="8" placeholder="ใส่ PIN" class="flex-1 px-4 py-2.5 bg-slate-700 text-white rounded-xl text-center text-lg font-mono tracking-widest focus:outline-none focus:ring-2 focus:ring-amber-500" />
+            <button id="electricUnlockBtn" class="px-5 py-2.5 bg-amber-500 hover:bg-amber-600 text-white font-semibold rounded-xl transition">ปลดล็อก</button>
+          </div>
+          <div id="electricPinError" class="hidden mt-3 text-rose-400 text-sm font-semibold">PIN ไม่ถูกต้อง</div>
+          <p class="text-xs text-slate-400 mt-4">PIN เริ่มต้น: <code class="bg-slate-700 px-2 py-1 rounded font-mono">2569</code> (เปลี่ยนได้ใน CONFIG)</p>
+        </div>
+
+        <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+          <div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+              แผงควบคุมอุปกรณ์
+              <span id="electricUserBadge" class="hidden text-xs px-2 py-0.5 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 rounded-full">🔓 ปลดล็อก</span>
+            </h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400">รองรับ MQTT Real-time + Schedule + Power Tracking</p>
+          </div>
+          <div class="flex gap-2 flex-wrap">
+            <button id="electricLockBtn" class="hidden px-3 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 text-sm font-semibold rounded-xl transition" title="ล็อก">🔒</button>
+            <button id="electricAllOn" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-semibold rounded-xl transition">เปิดทั้งหมด</button>
+            <button id="electricAllOff" class="px-4 py-2 bg-rose-600 hover:bg-rose-700 text-white text-sm font-semibold rounded-xl transition">ปิดทั้งหมด</button>
+          </div>
+        </div>
+        <div id="electricDeviceGrid" class="grid sm:grid-cols-2 gap-4"></div>
+      </div>
+
+      <div class="space-y-6">
+        <div class="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">สถานะห้องเรียน</h3>
+          <div class="grid grid-cols-2 gap-3 text-center">
+            <div class="bg-slate-50 dark:bg-slate-700 rounded-2xl p-4">
+              <div id="electricOnCount" class="text-3xl font-extrabold text-emerald-600 dark:text-emerald-400">0</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400">อุปกรณ์เปิด</div>
+            </div>
+            <div class="bg-slate-50 dark:bg-slate-700 rounded-2xl p-4">
+              <div id="electricPowerEstimate" class="text-3xl font-extrabold text-brand-600 dark:text-brand-400">0</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400">กำลังไฟโดยประมาณ W</div>
+            </div>
+          </div>
+          <div class="mt-4 p-4 rounded-2xl bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-900/50 text-sm text-yellow-800 dark:text-yellow-200">
+            ⚠️ ต้นแบบนี้เป็นหน้าจอควบคุมจำลอง หากใช้ควบคุมไฟ 220VAC จริง ต้องมีเบรกเกอร์ ฟิวส์ รีเลย์/คอนแทคเตอร์ที่ได้มาตรฐาน และกล่องควบคุมป้องกันไฟรั่ว
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">โหมดควบคุม</h3>
+          <div class="space-y-3">
+            <button id="modeTeaching" class="w-full px-4 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-semibold transition">โหมดสอน</button>
+            <button id="modeBreak" class="w-full px-4 py-3 bg-amber-500 hover:bg-amber-600 text-white rounded-xl font-semibold transition">โหมดพักกลางวัน</button>
+            <button id="modeShutdown" class="w-full px-4 py-3 bg-slate-800 hover:bg-slate-900 text-white rounded-xl font-semibold transition">โหมดเลิกเรียน</button>
+          </div>
+        </div>
+
+        <div class="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
+          <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">MQTT Broker</h3>
+          <div class="space-y-2 text-sm">
+            <div class="flex justify-between gap-3"><span class="text-slate-500 dark:text-slate-400">TCP สำหรับ ESP32</span><span class="font-mono text-slate-900 dark:text-white">202.29.231.205:1883</span></div>
+            <div class="flex justify-between gap-3"><span class="text-slate-500 dark:text-slate-400">Secure WebSocket สำหรับเว็บ</span><span class="font-mono text-slate-900 dark:text-white">wss://nextvora.duckdns.org/mqtt</span></div>
+            <div class="flex justify-between gap-3"><span class="text-slate-500 dark:text-slate-400">Topic หลัก</span><span class="font-mono text-slate-900 dark:text-white">LEARNX/CLASSROOM/POWER</span></div>
+          </div>
+          <div id="mqttStatus" class="mt-4 px-4 py-3 rounded-2xl bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200 text-sm font-semibold">MQTT: ยังไม่เชื่อมต่อ</div>
+          <div class="mt-3 text-xs text-slate-500 dark:text-slate-400">หมายเหตุ: Browser ไม่สามารถต่อ MQTT TCP port 1883 ได้โดยตรง ต้องเปิด Secure WebSocket listener ที่ Broker</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===== Schedule / Timer ===== -->
+    <div class="grid lg:grid-cols-2 gap-6 mb-6">
+      <div class="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
+        <div class="flex items-center justify-between gap-3 mb-5">
+          <div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">⏰ ตารางเวลาอัตโนมัติ</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400">เปิด-ปิดตามเวลา (ใช้เวลาท้องถิ่นของเครื่อง)</p>
+          </div>
+          <button id="scheduleAddBtn" class="px-4 py-2 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold rounded-xl transition">+ เพิ่ม</button>
+        </div>
+        <div id="scheduleList" class="space-y-2 max-h-72 overflow-y-auto scrollbar-thin"></div>
+        <div id="scheduleEmpty" class="text-center py-8 text-slate-400 dark:text-slate-500 text-sm">ยังไม่มีตารางเวลา กดปุ่ม + เพื่อเพิ่ม</div>
+        <div id="scheduleNext" class="hidden mt-4 px-4 py-3 rounded-2xl bg-indigo-50 dark:bg-indigo-900/30 text-indigo-700 dark:text-indigo-200 text-sm"></div>
+      </div>
+
+      <div class="bg-white dark:bg-slate-800 rounded-3xl p-6 shadow-sm border border-slate-200 dark:border-slate-700">
+        <div class="flex items-center justify-between gap-3 mb-5">
+          <div>
+            <h3 class="text-xl font-bold text-slate-900 dark:text-white">📊 สถิติการใช้พลังงาน</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400">คำนวณจากเวลาที่อุปกรณ์เปิด (ค่าไฟอ้างอิงตาม MEA)</p>
+          </div>
+          <button id="powerResetBtn" class="px-3 py-2 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 text-xs font-semibold rounded-xl transition">รีเซ็ต</button>
+        </div>
+        <div class="grid grid-cols-3 gap-3 mb-4 text-center">
+          <div class="bg-slate-50 dark:bg-slate-700 rounded-2xl p-3">
+            <div id="powerKwhToday" class="text-2xl font-extrabold text-amber-600 dark:text-amber-400">0.00</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400">kWh วันนี้</div>
+          </div>
+          <div class="bg-slate-50 dark:bg-slate-700 rounded-2xl p-3">
+            <div id="powerCostToday" class="text-2xl font-extrabold text-rose-600 dark:text-rose-400">฿0</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400">ค่าไฟวันนี้</div>
+          </div>
+          <div class="bg-slate-50 dark:bg-slate-700 rounded-2xl p-3">
+            <div id="powerKwhWeek" class="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400">0.00</div>
+            <div class="text-xs text-slate-500 dark:text-slate-400">kWh 7วัน</div>
+          </div>
+        </div>
+        <canvas id="powerChart" class="w-full" style="max-height:200px"></canvas>
+      </div>
+    </div>
+
+    <div class="bg-slate-900 rounded-3xl p-6 shadow-lg">
+      <div class="flex items-center justify-between gap-3 mb-4">
+        <h3 class="text-lg font-bold text-white">ตัวอย่าง MQTT Payload สำหรับ ESP32</h3>
+        <span class="text-xs text-slate-400 font-mono">topic: LEARNX/CLASSROOM/POWER/{device_id}</span>
+      </div>
+      <pre id="electricPayloadPreview" class="overflow-x-auto text-sm text-emerald-300 font-mono whitespace-pre-wrap bg-black/30 rounded-2xl p-4"></pre>
+      <div class="mt-3 text-xs text-slate-400">
+        💡 หากมีคน/ESP32 อื่น Publish ไปยัง topic นี้ หน้าเว็บนี้จะอัปเดต state อัตโนมัติทันที (รับผ่าน MQTT Subscribe)
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SCHEDULE MODAL ============ -->
+<div id="scheduleModal" class="hidden fixed inset-0 z-50 modal-overlay items-center justify-center p-4">
+  <div class="bg-white dark:bg-slate-800 rounded-3xl shadow-2xl max-w-md w-full overflow-hidden">
+    <div class="px-6 py-5 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between bg-gradient-to-r from-indigo-600 to-purple-600 text-white">
+      <h3 class="text-xl font-bold">⏰ เพิ่มตารางเวลา</h3>
+      <button id="scheduleModalClose" class="p-2 rounded-full hover:bg-white/20">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="p-6 space-y-4">
+      <div>
+        <label class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">เวลา</label>
+        <input id="scheduleTime" type="time" value="07:30" class="w-full px-4 py-2.5 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-900 dark:text-white text-lg font-mono" />
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">วันที่ทำงาน</label>
+        <div class="grid grid-cols-7 gap-1" id="scheduleDays">
+          <button data-day="1" class="day-btn px-2 py-2 text-xs rounded-lg border border-slate-200 dark:border-slate-600">จ</button>
+          <button data-day="2" class="day-btn px-2 py-2 text-xs rounded-lg border border-slate-200 dark:border-slate-600">อ</button>
+          <button data-day="3" class="day-btn px-2 py-2 text-xs rounded-lg border border-slate-200 dark:border-slate-600">พ</button>
+          <button data-day="4" class="day-btn px-2 py-2 text-xs rounded-lg border border-slate-200 dark:border-slate-600">พฤ</button>
+          <button data-day="5" class="day-btn px-2 py-2 text-xs rounded-lg border border-slate-200 dark:border-slate-600">ศ</button>
+          <button data-day="6" class="day-btn px-2 py-2 text-xs rounded-lg border border-slate-200 dark:border-slate-600">ส</button>
+          <button data-day="0" class="day-btn px-2 py-2 text-xs rounded-lg border border-slate-200 dark:border-slate-600">อา</button>
+        </div>
+        <div class="mt-2 flex gap-2 text-xs">
+          <button id="schedulePresetWeekday" class="text-indigo-600 hover:underline">วันธรรมดา</button>
+          <button id="schedulePresetWeekend" class="text-indigo-600 hover:underline">เสาร์-อาทิตย์</button>
+          <button id="schedulePresetAll" class="text-indigo-600 hover:underline">ทุกวัน</button>
+        </div>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">อุปกรณ์</label>
+        <select id="scheduleDevice" class="w-full px-4 py-2.5 bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 text-slate-900 dark:text-white"></select>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-slate-700 dark:text-slate-200 mb-2">การทำงาน</label>
+        <div class="grid grid-cols-2 gap-2">
+          <button data-action="on" class="action-btn px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 font-semibold">✅ เปิด</button>
+          <button data-action="off" class="action-btn px-3 py-2 rounded-xl border border-slate-200 dark:border-slate-600 font-semibold">⛔ ปิด</button>
+        </div>
+      </div>
+      <button id="scheduleSaveBtn" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition">บันทึกตารางเวลา</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ RESOURCES ============ -->
+<section id="resources" class="py-16 lg:py-24 bg-slate-100 dark:bg-slate-950/50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="inline-block px-4 py-1.5 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 rounded-full text-sm font-semibold mb-4">🔗 แหล่งเรียนรู้</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-4">เครื่องมือและแหล่งเรียนรู้</h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <a href="https://discord.com/download" target="_blank" rel="noopener" class="card-hover bg-white dark:bg-slate-800 rounded-2xl p-6 text-center shadow-sm">
+        <div class="w-14 h-14 mx-auto bg-[#5865F2] rounded-2xl flex items-center justify-center mb-3 text-white text-2xl">💬</div>
+        <h3 class="font-bold text-slate-900 dark:text-white mb-1">Discord</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400">ห้องเรียนออนไลน์</p>
+      </a>
+      <a href="https://www.codeblocks.org/downloads/" target="_blank" rel="noopener" class="card-hover bg-white dark:bg-slate-800 rounded-2xl p-6 text-center shadow-sm">
+        <div class="w-14 h-14 mx-auto bg-blue-500 rounded-2xl flex items-center justify-center mb-3 text-white text-2xl">⚒️</div>
+        <h3 class="font-bold text-slate-900 dark:text-white mb-1">Code::Blocks</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400">IDE ภาษา C/C++</p>
+      </a>
+      <a href="https://www.arduino.cc/en/software" target="_blank" rel="noopener" class="card-hover bg-white dark:bg-slate-800 rounded-2xl p-6 text-center shadow-sm">
+        <div class="w-14 h-14 mx-auto bg-teal-500 rounded-2xl flex items-center justify-center mb-3 text-white text-2xl">🔧</div>
+        <h3 class="font-bold text-slate-900 dark:text-white mb-1">Arduino IDE</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400">สำหรับ Microcontroller</p>
+      </a>
+      <a href="https://www.tinkercad.com/" target="_blank" rel="noopener" class="card-hover bg-white dark:bg-slate-800 rounded-2xl p-6 text-center shadow-sm">
+        <div class="w-14 h-14 mx-auto bg-orange-500 rounded-2xl flex items-center justify-center mb-3 text-white text-2xl">🎨</div>
+        <h3 class="font-bold text-slate-900 dark:text-white mb-1">Tinkercad</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400">จำลองวงจร</p>
+      </a>
+      <a href="https://drive.google.com/drive/folders/1fKDHtlpeZ1oJXPvXiy4Gq1lef6jKcSB3?usp=drive_link" target="_blank" rel="noopener" class="card-hover bg-white dark:bg-slate-800 rounded-2xl p-6 text-center shadow-sm">
+        <div class="w-14 h-14 mx-auto bg-yellow-500 rounded-2xl flex items-center justify-center mb-3 text-white text-2xl">📁</div>
+        <h3 class="font-bold text-slate-900 dark:text-white mb-1">Google Drive</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400">เอกสารและไฟล์</p>
+      </a>
+      <a href="https://forms.google.com" target="_blank" rel="noopener" class="card-hover bg-white dark:bg-slate-800 rounded-2xl p-6 text-center shadow-sm">
+        <div class="w-14 h-14 mx-auto bg-purple-500 rounded-2xl flex items-center justify-center mb-3 text-white text-2xl">📝</div>
+        <h3 class="font-bold text-slate-900 dark:text-white mb-1">Google Forms</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400">แบบทดสอบและใบงาน</p>
+      </a>
+      <a href="https://www.youtube.com/@PNXSYS" target="_blank" rel="noopener" class="card-hover bg-white dark:bg-slate-800 rounded-2xl p-6 text-center shadow-sm">
+        <div class="w-14 h-14 mx-auto bg-red-500 rounded-2xl flex items-center justify-center mb-3 text-white text-2xl">▶️</div>
+        <h3 class="font-bold text-slate-900 dark:text-white mb-1">YouTube</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400">@PNXSYS วิดีโอประกอบการสอน</p>
+      </a>
+      <a href="https://www.tutorialspoint.com/cprogramming" target="_blank" rel="noopener" class="card-hover bg-white dark:bg-slate-800 rounded-2xl p-6 text-center shadow-sm">
+        <div class="w-14 h-14 mx-auto bg-indigo-500 rounded-2xl flex items-center justify-center mb-3 text-white text-2xl">📖</div>
+        <h3 class="font-bold text-slate-900 dark:text-white mb-1">Tutorialspoint</h3>
+        <p class="text-xs text-slate-500 dark:text-slate-400">เรียนภาษา C</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TEACHERS ============ -->
+<section id="teacher" class="py-16 lg:py-24 bg-white dark:bg-slate-900">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-12">
+      <span class="inline-block px-4 py-1.5 bg-pink-100 dark:bg-pink-900/40 text-pink-700 dark:text-pink-300 rounded-full text-sm font-semibold mb-4">👨‍🏫👩‍🏫 ผู้สอน</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-3">คณะครูผู้สอน</h2>
+      <p class="text-slate-600 dark:text-slate-400">สาขาเทคโนโลยีอิเล็กทรอนิกส์ วิทยาลัยเทคนิคศรีสะเกษ</p>
+    </div>
+    <div id="teachersGrid" class="grid md:grid-cols-2 gap-8"></div>
+  </div>
+</section>
+
+<!-- ============ SPONSOR / โฆษณากิจการ ============ -->
+<section id="sponsor" class="py-16 lg:py-20 bg-slate-100 dark:bg-slate-950/50">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-10">
+      <span class="inline-block px-4 py-1.5 bg-orange-100 dark:bg-orange-900/40 text-orange-700 dark:text-orange-300 rounded-full text-sm font-semibold mb-4">📣 โฆษณากิจการ</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-2">ผู้สนับสนุน</h2>
+      <p class="text-slate-600 dark:text-slate-400">ขอขอบคุณกิจการที่สนับสนุนการศึกษา</p>
+    </div>
+
+    <div class="card-hover bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-lg border border-slate-200 dark:border-slate-700">
+      <div class="grid md:grid-cols-5">
+        <!-- Left: brand/logo -->
+        <div class="md:col-span-2 bg-gradient-to-br from-orange-500 via-red-500 to-red-700 p-8 text-white flex flex-col items-center justify-center text-center">
+          <div class="text-7xl mb-3">🏠</div>
+          <div class="text-2xl sm:text-3xl font-extrabold leading-tight">โปรหลังคาเหล็ก</div>
+          <div class="text-2xl sm:text-3xl font-extrabold leading-tight mb-2">วังหิน</div>
+          <div class="text-orange-100 text-sm">Pro Metal Sheet WangHin</div>
+        </div>
+        <!-- Right: details -->
+        <div class="md:col-span-3 p-8 flex flex-col justify-center">
+          <div class="flex items-center gap-2 text-xs font-bold text-red-600 dark:text-red-400 mb-3 uppercase tracking-wide">
+            <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+            สนับสนุนการเรียนการสอน
+          </div>
+          <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white mb-3">
+            จำหน่าย • ติดตั้ง • หลังคาเหล็ก เมทัลชีท
+          </h3>
+          <p class="text-slate-600 dark:text-slate-300 mb-5 leading-relaxed">
+            บริการครบวงจร หลังคาเหล็ก เมทัลชีท โครงสร้างเหล็ก โดยทีมงานมืออาชีพ
+            คุณภาพมาตรฐาน ราคายุติธรรม ติดตั้งรวดเร็ว รับประกันงาน
+            พื้นที่อำเภอวังหิน จังหวัดศรีสะเกษ และจังหวัดใกล้เคียง
+          </p>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-5 text-xs">
+            <div class="bg-orange-50 dark:bg-orange-900/30 rounded-lg p-2 text-center">
+              <div class="text-lg">✓</div>
+              <div class="text-orange-700 dark:text-orange-300 font-semibold">งานคุณภาพ</div>
+            </div>
+            <div class="bg-orange-50 dark:bg-orange-900/30 rounded-lg p-2 text-center">
+              <div class="text-lg">⚡</div>
+              <div class="text-orange-700 dark:text-orange-300 font-semibold">ติดตั้งไว</div>
+            </div>
+            <div class="bg-orange-50 dark:bg-orange-900/30 rounded-lg p-2 text-center">
+              <div class="text-lg">💰</div>
+              <div class="text-orange-700 dark:text-orange-300 font-semibold">ราคาดี</div>
+            </div>
+            <div class="bg-orange-50 dark:bg-orange-900/30 rounded-lg p-2 text-center">
+              <div class="text-lg">🛡️</div>
+              <div class="text-orange-700 dark:text-orange-300 font-semibold">รับประกัน</div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap gap-3">
+            <a href="https://www.facebook.com/ProMetalSheetWangHin" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#1877F2] hover:bg-[#0e5fc7] text-white font-semibold rounded-xl shadow-md transition">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              Facebook
+            </a>
+            <a href="https://line.me/ti/p/ILNc59G7so" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-2 px-5 py-2.5 bg-[#06C755] hover:bg-[#04a647] text-white font-semibold rounded-xl shadow-md transition">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63h2.386c.346 0 .627.285.627.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.63-.63.346 0 .628.285.628.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314"/></svg>
+              Line
+            </a>
+            <a href="https://www.facebook.com/ProMetalSheetWangHin" target="_blank" rel="noopener"
+               class="inline-flex items-center gap-1 px-4 py-2.5 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-slate-700 dark:text-slate-200 font-medium rounded-xl text-sm transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              เปิดเพจ
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="text-center text-xs text-slate-500 dark:text-slate-400 mt-6 italic">
+      หากต้องการสนับสนุนการศึกษาสาขาเทคโนโลยีอิเล็กทรอนิกส์ ติดต่อครูวีระวัฒน์ ภูสมหมาย
+    </p>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact" class="py-16 lg:py-24 bg-gradient-to-br from-brand-600 via-brand-700 to-pink-700 text-white">
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12">
+      <span class="inline-block px-4 py-1.5 bg-white/20 rounded-full text-sm font-semibold mb-4">📞 ติดต่อ</span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">ติดต่อสอบถาม</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" id="contactGrid"></div>
+    <div class="mt-12 text-center pt-8 border-t border-white/20">
+      <div class="font-bold text-lg mb-2"><a href="https://www.sisat.ac.th/" target="_blank" class="text-white hover:text-brand-100 underline">วิทยาลัยเทคนิคศรีสะเกษ</a></div>
+      <div class="text-sm text-brand-100"><a href="https://www.facebook.com/AiElectronixSociety/">แผนกวิชาเทคโนโลยีอิเล็กทรอนิกส์</a> • <a href="http://www.vec.go.th/">สำนักงานคณะกรรมการการอาชีวศึกษา</a></div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-slate-900 dark:bg-black text-slate-300 py-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm">
+    <p>© 2569 ห้องเรียนออนไลน์ ครูวีระวัฒน์ ภูสมหมาย</p>
+    <p class="mt-1 text-slate-500">แผนกวิชาเทคโนโลยีอิเล็กทรอนิกส์ วิทยาลัยเทคนิคศรีสะเกษ</p>
+  </div>
+</footer>
+
+<!-- ============ SEARCH MODAL ============ -->
+<div id="searchModal" class="hidden fixed inset-0 z-50 modal-overlay items-start justify-center pt-20 p-4">
+  <div class="bg-white dark:bg-slate-800 rounded-2xl shadow-2xl max-w-2xl w-full overflow-hidden">
+    <div class="flex items-center px-5 py-4 border-b border-slate-100 dark:border-slate-700">
+      <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/></svg>
+      <input id="searchInput" type="text" placeholder="ค้นหาวิชา สัปดาห์ หรือเอกสาร..." class="flex-1 bg-transparent border-0 outline-none px-3 text-slate-900 dark:text-white placeholder-slate-400" />
+      <button id="searchClose" class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div id="searchResults" class="max-h-96 overflow-y-auto scrollbar-thin p-2"></div>
+  </div>
+</div>
+
+<!-- ============ MODAL ============ -->
+<div id="modal" class="hidden fixed inset-0 z-50 modal-overlay items-center justify-center p-4">
+  <div class="bg-white dark:bg-slate-800 rounded-3xl shadow-2xl max-w-4xl w-full max-h-[90vh] overflow-hidden flex flex-col">
+    <div id="modalHeader" class="px-6 py-5 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between">
+      <div>
+        <div id="modalCode" class="text-sm font-mono opacity-60"></div>
+        <h3 id="modalTitle" class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white"></h3>
+        <div id="modalMeta" class="text-sm text-slate-500 dark:text-slate-400 mt-1"></div>
+      </div>
+      <button id="modalClose" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-700">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+    <div class="overflow-y-auto scrollbar-thin flex-1">
+      <div class="px-6 py-4 bg-slate-50 dark:bg-slate-900 border-b border-slate-100 dark:border-slate-700 sticky top-0 z-10">
+        <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-2">เลือกสัปดาห์ที่ต้องการดู</div>
+        <div id="weekList" class="flex gap-2 overflow-x-auto scrollbar-thin pb-2"></div>
+      </div>
+      <div id="modalContent" class="p-6"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ CONFIGURATION (แก้ที่นี่!) ============ -->
+<script>
+// ========================================================
+// 🔧 CONFIG - แก้ไขข้อมูลที่นี่
+// ========================================================
+const CONFIG = {
+  // ลิงก์ Discord Server (ใส่ลิงก์ Invite)
+  discordInvite: "https://discord.gg/ACUTgG29",
+
+  // ข้อมูลติดต่อ
+  email: "wpoosommai@gmail.com",
+  line: "Pwerawat",
+  phone: "0812661861",
+  facebook: "https://facebook.com/pwerawat",
+
+  // อัปเดตล่าสุด
+  lastUpdated: "17 พฤษภาคม 2569",
+
+  // ประกาศแบนเนอร์ (ใส่ "" เพื่อปิด)
+  banner: "📢 เปิดภาคเรียน 1/2569 แล้ว! เข้า Discord เพื่อรับข่าวสาร",
+};
+
+// ========================================================
+// 📰 ANNOUNCEMENTS / NEWS - แก้ไขข่าวสารที่นี่
+// ========================================================
+const NEWS = [
+  {
+    date: "17 พ.ค. 2569", tag: "เปิดเทอม", tagColor: "emerald",
+    title: "เปิดภาคเรียนที่ 1/2569",
+    desc: "ยินดีต้อนรับนักศึกษาทุกคนเข้าสู่ภาคเรียนใหม่ ตรวจสอบรายวิชาและเข้า Discord ของห้องเรียน",
+    link: "#subjects"
+  },
+  {
+    date: "17 พ.ค. 2569", tag: "เอกสาร", tagColor: "blue",
+    title: "เผยแพร่เอกสารสัปดาห์ที่ 1",
+    desc: "ใบความรู้ PowerPoint ใบงาน ของทั้ง 5 วิชา พร้อมให้นักศึกษาดาวน์โหลดและศึกษาก่อนเข้าเรียน",
+    link: "#subjects"
+  },
+  {
+    date: "14 พ.ค. 2569", tag: "Discord", tagColor: "purple",
+    title: "เชิญเข้า Discord ห้องเรียน",
+    desc: "ใช้ Discord เป็นช่องทางหลักในการสื่อสาร ส่งงาน ถามคำถาม นักศึกษาทุกคนกรุณาเข้าให้เรียบร้อย",
+    link: "#contact"
+  },
+  // เพิ่มข่าวสารเพิ่มเติมโดยทำตามรูปแบบนี้
+];
+
+// ========================================================
+// 📚 SUBJECTS
+// ========================================================
+const SUBJECTS = [
+  {
+    code: "30105-2006", color: "prog", icon: "💻",
+    name: "การเขียนโปรแกรมคอมพิวเตอร์", nameEn: "Computer Programming",
+    classGroup: "สออ.11 / สออ.12 (ทวิภาคี)",
+    credit: "2-3-3", hours: 5, room: "ห้อง 211", days: ["จันทร์"],
+    teacher: "weerawat",
+    desc: "ศึกษาและปฏิบัติเกี่ยวกับการเขียนโปรแกรมคอมพิวเตอร์ด้วยภาษา C/C++ ตั้งแต่หลักการพื้นฐาน โครงสร้างของภาษา ตัวแปร ตัวดำเนินการ คำสั่งควบคุม ฟังก์ชัน อาเรย์ และการประยุกต์ในงานอิเล็กทรอนิกส์",
+    units: ["ความรู้พื้นฐานการเขียนโปรแกรมคอมพิวเตอร์","ขั้นตอนการพัฒนาโปรแกรมและผังงาน","ตัวแปรและตัวดำเนินการ (Operators)","การควบคุมการทำงาน (if-else, switch-case, การวนซ้ำ)","ฟังก์ชัน (Functions)","อาเรย์และสตริง (Arrays & Strings)","โครงสร้างข้อมูลและพอยน์เตอร์","File I/O และ OOP เบื้องต้น","Mini Project: ระบบเซ็นเซอร์ IoT","โครงสร้างข้อมูล Linked List","โครงสร้างข้อมูล Stack และ Queue","Mini Project: ระบบจัดการงานซ่อมร้านอิเล็กทรอนิกส์","นำเสนอ Mini Project และทบทวนเนื้อหา","สอบปลายภาค"]
+  },
+  {
+    code: "30105-2007", color: "robot", icon: "🤖",
+    name: "หุ่นยนต์อุตสาหกรรม", nameEn: "Industrial Robots",
+    classGroup: "สออ.22", credit: "2-3-3", hours: 3, room: "ห้อง 211", days: ["พฤหัสบดี"],
+    teacher: "weerawat",
+    desc: "ศึกษาเกี่ยวกับหลักการ องค์ประกอบ และประเภทของหุ่นยนต์อุตสาหกรรม ระบบขับเคลื่อน เซ็นเซอร์ การควบคุม การประยุกต์ใช้ในอุตสาหกรรมการผลิต และมาตรฐานความปลอดภัย",
+    units: ["ความรู้พื้นฐานเกี่ยวกับหุ่นยนต์อุตสาหกรรม","ระบบเซ็นเซอร์ของหุ่นยนต์","ระบบขับเคลื่อนและ Actuator","การใช้งาน Teach Pendant","End Effector และอุปกรณ์ปลายแขน","ESP32 พื้นฐานสำหรับหุ่นยนต์ (GPIO, PWM)","(จะประกาศเพิ่มเติม)","การเขียนโปรแกรมควบคุมหุ่นยนต์ด้วย ESP32 (Servo, DC Motor)","(จะประกาศเพิ่มเติม)","(จะประกาศเพิ่มเติม)","(จะประกาศเพิ่มเติม)","(จะประกาศเพิ่มเติม)","(จะประกาศเพิ่มเติม)","การควบคุมแบบปิด (PID/Feedback Control)"]
+  },
+  {
+    code: "30100-1018", color: "safety", icon: "🦺",
+    name: "ความปลอดภัย อาชีวอนามัยและสิ่งแวดล้อมในการปฏิบัติงาน", nameEn: "Occupational Safety, Health & Environment",
+    classGroup: "สออ.21 / สออ.22", credit: "2-3-3", hours: 5, room: "ห้อง 211", days: ["ศุกร์"],
+    teacher: "weerawat",
+    desc: "ศึกษาเกี่ยวกับหลักการ ความสำคัญ กฎหมาย มาตรฐานสากล ของความปลอดภัยและอาชีวอนามัยในการทำงาน การจัดการอันตราย การใช้ PPE หลัก 5ส และการดำเนินกิจกรรมในสถานประกอบการ",
+    units: ["พื้นฐานความปลอดภัย อาชีวอนามัยและสิ่งแวดล้อม","กฎหมายและมาตรฐานความปลอดภัย","อุปกรณ์ป้องกันอันตรายส่วนบุคคล (PPE)","การยศาสตร์และความเสี่ยงจากท่าทางการทำงาน","ความปลอดภัยด้านอัคคีภัยและไฟฟ้า","การจัดการเหตุฉุกเฉิน","ความปลอดภัยด้านสารเคมีอันตราย","การประเมินความเสี่ยงเบื้องต้น","วัฒนธรรมความปลอดภัย (Safety Culture, BBS)","การระบุอันตรายและประเมินความเสี่ยง (Hazard ID & Risk Assessment)","โครงงานประเมินความเสี่ยงในสถานประกอบการจริง","การสอบสวนอุบัติเหตุและการรายงาน","ระบบการจัดการความปลอดภัย (OHSMS/ISO 45001)","(จะประกาศเพิ่มเติม)","ทบทวนก่อนสอบปลายภาค"]
+  },
+  {
+    code: "30100-1020", color: "pneu", icon: "⚙️",
+    name: "การควบคุมนิวเมติกส์และไฮดรอลิกส์", nameEn: "Pneumatic and Hydraulic Control",
+    classGroup: "มออ.21", credit: "2-3-3", hours: 5, room: "ห้องนิเทศ", days: ["อังคาร"],
+    teacher: "weerawat",
+    desc: "ศึกษาเกี่ยวกับหลักการของระบบควบคุมด้วยของไหล นิวเมติกส์และไฮดรอลิกส์ องค์ประกอบของระบบ การอ่านสัญลักษณ์ การออกแบบและประกอบวงจร การประยุกต์ใช้ในงานอุตสาหกรรม",
+    units: ["พื้นฐานระบบนิวเมติกส์และไฮดรอลิกส์","อุปกรณ์ในระบบนิวเมติกส์","อุปกรณ์ในระบบไฮดรอลิกส์","สัญลักษณ์ ISO 1219","วงจรพื้นฐานของระบบ","การควบคุมความเร็วและทิศทาง","วงจรควบคุมแบบ Sequence","สอบกลางภาค","Electro-Pneumatic","การเชื่อมต่อกับ PLC","การออกแบบและประกอบวงจร","การบำรุงรักษา","การประยุกต์ใช้ในอุตสาหกรรม","Mini Project","สอบปลายภาค"]
+  },
+  {
+    code: "30105-2004", color: "intf", icon: "🔌",
+    name: "เทคนิคการอินเตอร์เฟซ", nameEn: "Interface Techniques",
+    classGroup: "มออ.21", credit: "2-3-3", hours: 5, room: "ห้องนิเทศ", days: ["พุธ"],
+    teacher: "weerawat",
+    desc: "ศึกษาเกี่ยวกับหลักการของการเชื่อมต่อระหว่างคอมพิวเตอร์/ไมโครคอนโทรลเลอร์กับอุปกรณ์ภายนอก ระดับลอจิก ADC/DAC PWM พอร์ตการสื่อสาร UART/SPI/I²C/USB และการประยุกต์ใช้ในงานอุตสาหกรรม",
+    units: ["ความรู้พื้นฐานเทคนิคการอินเตอร์เฟซ","ระดับลอจิกและ Level Shifter","ADC – การแปลง Analog เป็น Digital","DAC และ PWM","การสื่อสารแบบ UART","การสื่อสารแบบ SPI","การสื่อสารแบบ I²C","สอบกลางภาค","USB และ Serial Converter","RS-232 / RS-485 / Modbus","Ethernet และ TCP/IP","Wireless: Bluetooth / Wi-Fi / LoRa","การประยุกต์ใช้กับเซ็นเซอร์","Mini Project IoT","สอบปลายภาค"]
+  },
+  // ===== วิชาของ อ.มัลลิกา สิทธิโชค =====
+  {
+    code: "30105-0002", color: "basic", icon: "⚡",
+    name: "งานพื้นฐานวงจรไฟฟ้าและการวัด", nameEn: "Basic Electrical Circuits and Measurement",
+    classGroup: "ปวส.1 ทอ. (693010501, 693010502)", credit: "2-3-3", hours: 5, room: "ห้อง 111", days: ["ศุกร์"],
+    teacher: "mallika",
+    desc: "ศึกษาและปฏิบัติเกี่ยวกับ หลักการพื้นฐานของไฟฟ้า แรงดัน กระแส ความต้านทาน กฎของโอห์ม วงจรอนุกรม-ขนาน-ผสม การใช้เครื่องมือวัดทางไฟฟ้า มัลติมิเตอร์ ออสซิลโลสโคป และความปลอดภัยในการทำงานทางไฟฟ้า",
+    units: ["พื้นฐานไฟฟ้า แรงดัน กระแส ความต้านทาน","กฎของโอห์ม และการคำนวณ","วงจรอนุกรม","วงจรขนาน","วงจรผสม","กฎของ Kirchhoff (KCL, KVL)","มัลติมิเตอร์ดิจิทัล","สอบกลางภาค","ออสซิลโลสโคป","การวัดแรงดัน AC/DC","การวัดกระแสและความต้านทาน","กำลังไฟฟ้าและพลังงาน","แม่เหล็กไฟฟ้าเบื้องต้น","Mini Project ออกแบบวงจร","สอบปลายภาค"]
+  },
+  {
+    code: "30105-2009", color: "scada", icon: "🏭",
+    name: "การประยุกต์ใช้ระบบ SCADA ในงานอุตสาหกรรม", nameEn: "SCADA Application in Industry",
+    classGroup: "ปวส.2 ทอ. (683010501)", credit: "2-3-3", hours: 5, room: "ห้องนิเทศ", days: ["จันทร์, พฤหัสบดี"],
+    teacher: "mallika",
+    desc: "ศึกษาและปฏิบัติเกี่ยวกับ ระบบ SCADA (Supervisory Control and Data Acquisition) สถาปัตยกรรม HMI RTU PLC โปรโตคอลการสื่อสาร การออกแบบหน้าจอ Monitor Alarm Trend และการประยุกต์ใช้ในโรงงานอุตสาหกรรมจริง",
+    units: ["พื้นฐานระบบ SCADA และสถาปัตยกรรม","องค์ประกอบ HMI/RTU/PLC/MTU","โปรโตคอลการสื่อสาร Modbus","โปรโตคอลการสื่อสาร PROFINET/EtherNet IP","Tag Database และ I/O Mapping","การออกแบบหน้าจอ HMI","ระบบ Alarm และ Event","สอบกลางภาค","Trending และ Historical Data","Recipe และ Batch Control","Security ในระบบ SCADA","Cloud SCADA และ IIoT","การประยุกต์ใช้ในโรงงานจริง","Mini Project SCADA","สอบปลายภาค"]
+  },
+  {
+    code: "30105-2030", color: "analyze", icon: "🔬",
+    name: "การวิเคราะห์วงจรอิเล็กทรอนิกส์", nameEn: "Electronic Circuit Analysis",
+    classGroup: "ปวส.1 ทอ. (693010501-504)", credit: "2-3-3", hours: 5, room: "ห้อง 111", days: ["จันทร์-พฤหัสบดี"],
+    teacher: "mallika",
+    desc: "ศึกษาและปฏิบัติเกี่ยวกับ การวิเคราะห์วงจรอิเล็กทรอนิกส์เบื้องต้น ไดโอด ทรานซิสเตอร์ Op-Amp วงจรขยาย วงจรกรอง วงจรออสซิลเลเตอร์ และการใช้ซอฟต์แวร์จำลองวงจร (Multisim/Proteus)",
+    units: ["พื้นฐานวงจรอิเล็กทรอนิกส์และอุปกรณ์","ไดโอดและการประยุกต์ใช้","วงจรเรียงกระแส (Rectifier)","ทรานซิสเตอร์ BJT","ทรานซิสเตอร์ FET","วงจรขยายสัญญาณ","Op-Amp พื้นฐานและการประยุกต์","สอบกลางภาค","วงจรกรองสัญญาณ (Filter)","วงจรออสซิลเลเตอร์","Power Supply และ Voltage Regulator","วงจรดิจิทัลพื้นฐาน","การใช้ซอฟต์แวร์จำลอง Multisim/Proteus","Mini Project","สอบปลายภาค"]
+  },
+];
+
+// ===== ข้อมูลผู้สอน =====
+const TEACHERS = {
+  weerawat: {
+    name: "นายวีระวัฒน์  ภูสมหมาย",
+    role: "ครู วิทยฐานะ ครูชำนาญการพิเศษ",
+    edu: "ครุศาสตรอุตสาหกรรมมหาบัณฑิต (วิศวกรรมไฟฟ้า)",
+    dept: "สาขาเทคโนโลยีอิเล็กทรอนิกส์",
+    duty: "งานศูนย์ข้อมูลสารสนเทศ",
+    workload: "28 ชั่วโมง/สัปดาห์",
+    subjects: "6 รายวิชา",
+    icon: "👨‍🏫",
+    color: "from-brand-500 via-pink-500 to-orange-400",
+    email: "wpoosommai@gmail.com"
+  },
+  mallika: {
+    name: "นางมัลลิกา  สิทธิโชค",
+    role: "ครู วิทยฐานะ ครูชำนาญการพิเศษ",
+    edu: "ครุศาสตรอุตสาหกรรมมหาบัณฑิต (วิศวกรรมไฟฟ้า)",
+    dept: "สาขาเทคโนโลยีอิเล็กทรอนิกส์",
+    duty: "งานบุคลากร",
+    workload: "31 ชั่วโมง/สัปดาห์",
+    subjects: "4 รายวิชา",
+    icon: "👩‍🏫",
+    color: "from-pink-500 via-rose-500 to-red-500",
+    email: ""
+  }
+};
+
+// ========================================================
+// 📁 MATERIALS - ลิงก์เอกสารของแต่ละสัปดาห์ (แก้ที่นี่!)
+// รูปแบบ: code → week_number → resource_type
+// resource_type: handout, slide, lab, pretest, posttest, video
+// ใส่ "" หากยังไม่มีลิงก์
+// ========================================================
+const MATERIALS = {
+  "30105-2006": {  // การเขียนโปรแกรม
+    1: {
+      folder:   "https://drive.google.com/drive/folders/1ZMPEWnGQqTVxm-jh-3_pWqz9-_IfmM_k?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1Rxt162gYOnNZWaxGHl-BfF3SeGgWKDjG/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1GSkPHBMw8MzajNSUfjq506lmmoCImDNi/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1VusdOVI8IIunCC7c91pykvOT2QyCMfLL/view?usp=sharing",
+      pretest:  "",  // จะสร้างผ่าน Google_Form_Builder.gs
+      posttest: "",  // จะสร้างผ่าน Google_Form_Builder.gs
+      video:    "",
+    },
+    2: {
+      folder:   "https://drive.google.com/drive/folders/1JvsslL8a-NIJZgO88q3XXT6_Oja-xKIY?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1EeENZeiPWqKVK1vPE8N25lMyTAfICqw1/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1azfPwHV-i7yD0klJcgCjEsG_DX40KgZy/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1O2WO433LvMEI90zD9qYNhXdClJv1y7y2/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    },
+    3: {
+      folder:   "https://drive.google.com/drive/folders/1q1GGeemyVpj-NgFBoRbzm8J83kjE3EU-?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1RjRr4m0TopfwIgMMnc3mkfrYsz5esMbw/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1FJhr380eeVAcsJq9lexOX6nA_Pl5qXoZ/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1OA3Rs8HsBCQXf0bO03EsER7kviDVbgqJ/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    },
+    4: {
+      folder:   "https://drive.google.com/drive/folders/1CSSnF1fKjJbOOYw_9Lr5siUash1VUh4s?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1ZMiS7yCtn8E0ula_vXUMhMfMaOcK23-3/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1k3Es4FJq0Ck3EdZOTHFyAKMIgRa21Y1n/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1raLLvsHh6lWAs8PQE6vdPf0grvwQUmZR/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    }
+    // เพิ่มสัปดาห์ที่ 5-15 ตามรูปแบบเดียวกัน
+  },
+  "30105-2007": {  // หุ่นยนต์อุตสาหกรรม
+    1: {
+      folder:   "https://drive.google.com/drive/folders/1DO4K2iYG4mZjTuM-Lwu-8SdLe-xWrZlc?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1DpZBN1VmKJhP9YaBKpLw8R7fiCN7HqD2/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1PWiGPmvSHB4FnNQd2fKkTNYGTTgtOud2/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/11TDchVyaegj7u1sL4mbRMDOBWlXhiBFo/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    },
+    2: {
+      folder:   "https://drive.google.com/drive/folders/1GkjOaSFli7KFFdeMHSKIOTCWyU2EgTnY?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1JWfHUMzNdA3KNSTTQeKWpYaOMhhUw4Bh/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1JQRuL9BAEAZkk_9hNz25J5WkeySAznYH/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1ww0_vicWjnPPXa760JG-Ce0yAMHfJsOG/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    },
+    3: {
+      folder:   "https://drive.google.com/drive/folders/1LLhSedZdBEUrRIqzozyQB0BUQ7Qjeeif?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/17IwJI9k6WoJt9Nq6SixhfQdhhLKkPm44/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1NNwehV0qydU2GZkdcMioIV627wvemNs6/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1REAC5cc2Z6ZcTvbNGe-XJ7sdWLKWc8TP/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    },
+    4: {
+      folder:   "https://drive.google.com/drive/folders/1ROXebxQA-TrlGQvrBoshe3VkqAMVwe65?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1XaYRRZw1Dg3wyJzHzXUSVoeu1OnpEkjo/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1bONdFHNbwqr_zTYoQH-9KYz3NZ4stVf3/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1AzhTTaumjSkwJTAB9FkbVW66_L2TH6eK/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    }
+  },
+  "30100-1018": {  // ความปลอดภัย
+    1: {
+      folder:   "https://drive.google.com/drive/folders/1veotrygRowoyr41QDlvkrm_1B96hFl7x?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1E5nmjxG3Tki5TjwN02LlL5aJXJWsGIUz/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/16vRHPj6hcV3fyl2yG9IALxSEdaZVqTNa/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1JiqtuprNUBhQOt9UhPbIevxAClBDluG7/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    },
+    2: {
+      folder:   "https://drive.google.com/drive/folders/13HpKeSBs3s0U_X3OruEYJKxWEjZBLnUt?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1bnY3kp5jarhYJr0ayNffYhHUEESt13pD/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1ZuzjB6jSlzkGSs9PUcmEoQMyIXQ3-EQF/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1s4PCePZ3cBJl4P6HL-0Mr_S7orkfKq5h/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    },
+    3: {
+      folder:   "https://drive.google.com/drive/folders/1tVfq0ioajRLJDbLhDv925YH-eup2pT-g?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1mPWjAcTh94jl6FzIxgFgmZP8BR1l2Ck3/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1jSgEWzoiaBSJorE19Msj-lbXTlxnhpnP/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1rv4QB2gYsTKKaQ-8ZzJ5Yxe_HJrgY23h/view?usp=sharing",
+      pretest:  "https://forms.gle/bnAf2KG7gpdaUhJH8",
+      posttest: "https://forms.gle/bnAf2KG7gpdaUhJH8",
+      video: ""
+    },
+    4: {
+      folder:   "https://drive.google.com/drive/folders/1C5ubROOg3zN9T916KYnUYartmLa1BR64?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1bBI_7vUCeL2G6RxE4iYP5Es0x0kx_NuR/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1-w-xcEMS2ZK18Xf_i-jYqPyi2z6noiFS/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1Yx8eynXuu0tjC1zRPq6nzrq3FBd8VzDX/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    }
+  },
+  "30100-1020": {  // นิวเมติกส์
+    1: {
+      folder:   "https://drive.google.com/drive/folders/1V-JeAHU9vIK5Ptc-o9knTE2xMwSh3o5T?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1uMIzO0tb2Frfanpa8suw2ziZ-ad7DHYN/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1k3qJ3KVMUKqJXaf6G4Rl4Jd8twa6YfDy/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1FEDiWewV_dNCi9K6wk5OaFX48GX_dQNQ/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    },
+    2: {
+      folder:   "https://drive.google.com/drive/folders/1_IywEnTO10dYRbg6W0KBJ7-c71hg_U4p?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1Bz1lLyWKBltTe0sbX1w8CAdateunQtRE/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1og4xTw0ada5fIKnpz-mlL1-mGVCF9zQw/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1OcoYabXeAr0bCoOVaf5vW4jdEwq32QY6/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    },
+    3: {
+      folder:   "https://drive.google.com/drive/folders/1UX9l2sGAupLtuEJus7yOr6cyWKH_PITu?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1hUhSqbsSzqKIiEbd2VAUNk19xw_PpRr6/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1pLEgf84HqF5kO5QNHENTXIOARvEz7x93/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1JojKtIZzK-0Az7xtqyQKDAQFh5Dm_ouC/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    },
+    4: {
+      folder:   "https://drive.google.com/drive/folders/1JXOplBCKBcq_VSZV8YRgZWm52_tGaXpn?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1rzYHw_YqlAoCsS3_Lv9J3LCUj95tYGfI/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1Jm3yrXi01DZ-mnEp5NMXESn2wWcf4Tcm/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1_n3UNXcuHIzjClF-MVnblQKlvUo8Iqcx/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    }
+  },
+  "30105-2004": {  // เทคนิคการอินเตอร์เฟซ
+    1: {
+      folder:   "https://drive.google.com/drive/folders/1S3cPQCuN18QsDG3yG89VPqyxoT-lhaLM?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/175kVO88KVS99hhsvR3TpKjSKxqDFNU7-/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1BHwo6VMGATphoJAY1pv2tt9BfkBTJF8v/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1exJCbmzyv58ROCdSZDIfLJHvmc0wT7AU/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    },
+    2: {
+      folder:   "https://drive.google.com/drive/folders/1gg4fiwLeMwasYxRVpV_OvvPsFncg1O7F?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1FH4fLMxfrYkcYqth_ra22MwNDRx1j-F7/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1BCKaz2CIJWLnADl47xAWXMDFJsqmyv0c/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1Ef6Rzq9U7nylBp5AeCPEsYSwQgQIraRg/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    },
+    3: {
+      folder:   "https://drive.google.com/drive/folders/1yaymPOoL49ppQnlmLO588MzdHJJXD3rT?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1JjolQfkRPcbvt65kGmp7JsYtNsVDUQ_W/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1F-OwMUAt-gtM7Qxzw0H_BmzQsmt7QL9y/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1hjukQUihDJ9vJsTfzkganzxfjLJ8u_ou/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    },
+    4: {
+      folder:   "https://drive.google.com/drive/folders/1OJCzYRqfu5FljkyOE59r9ejQs9bDUziS?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1yFbaBJDHSwZZCgHUWJ5Z_3XvHNhdT5z1/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1CNTKb1cYqNSogQSkMHNYRG2iKB-882zc/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1IE_QLsSOAI6Eu0_KFMND82j3yJb-C3dc/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    }
+  },
+  // ===== วิชาของ อ.มัลลิกา สิทธิโชค =====
+  "30105-0002": {  // งานพื้นฐานวงจรไฟฟ้าและการวัด
+    1: {
+      folder:   "https://drive.google.com/drive/folders/1h2kfugUNc4GRYSclWXYB6mCqPcrJ6d0e?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/182LqHgUfjwvDlEoMs9EoGlwyETKGaaUN/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1q3MUHZrfMQY6UAg3Xj5yPjSEkhSqIQ5o/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1opQxIPfUWxygQ-7K56yF9-gKUHrVXhBW/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    },
+    2: {
+      folder:   "https://drive.google.com/drive/folders/1JMvntSZKa8537BFhtnJIN_Lp9Dv0Q5e3?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1nikgEoQwA4hwUWTOEoD0R237Tm6YB2Im/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/14qMuKzxtPns2snhWz7pQPl3ikkr2GQeJ/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1znZSAKn7cltfOpoNKvIPSXy3VtKiF-K9/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    }
+  },
+  "30105-2009": {  // การประยุกต์ใช้ระบบ SCADA
+    1: {
+      folder:   "https://drive.google.com/drive/folders/1sYLVnG-qrzIU-rsfT9pqL6x2H-kScA2Q?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1gkUjHg-e9z7a5DoS6RPG5tnHuS4u3Gup/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1rIBAzWfNdhTjFgZdtaGQROeWcwzKSCPl/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1CllGR_Cg34BEVbBVEyZGFa_bDZhlPWzx/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    },
+    2: {
+      folder:   "https://drive.google.com/drive/folders/1lUFQVy36zNBm4664hTrSn8wgVlHVKrS-?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/13ch3AUcswnRHcHlGqL9VK_F_hrj_m9my/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1nuKUhSnBhFeyk7IikoL8wgibi1cQKJsz/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1910e-s5DO8OFYMAq7rAmUIR5ZQtHaqlV/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    },
+    3: {
+      folder:   "https://drive.google.com/drive/folders/15OEGUKtwr0wbwrUPfKXhYpD6ZYhM5uMe?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1yyUVlRHY-aIt167rekzvCJrOGuXSFJhb/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/15G1phs2lBtDPbygAODtFO2sut4sRIZUA/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1OHt0FEfDqfJlWkm7K8xOIK6Ucjxd_fGN/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    }
+  },
+  "30105-2030": {  // การวิเคราะห์วงจรอิเล็กทรอนิกส์
+    1: {
+      folder:   "https://drive.google.com/drive/folders/10NNqr5NfM7Sxd5KiYKmH64YTEx2kO5ma?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1XfyXon1YZDW_ojhSnQ5SxZf3DlFmfRp0/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1Nlg_P2fNsnnb7PGNPKrHYzZCD1yFkKK6/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/11qxyuNpBGZSCVY_kv1a8zNY_WBiF4w0y/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    },
+    2: {
+      folder:   "https://drive.google.com/drive/folders/1SWWmZzkSg8H5kXo528KmH6ldqpQJe4_C?usp=drive_link",
+      handout:  "https://drive.google.com/file/d/1teYgLBguAPysTLLfV8WNOnrdg3U-dBvg/view?usp=sharing",
+      slide:    "https://drive.google.com/file/d/1bcl96TW34CyL0-WE4dkSQpJE8Zjz9bqR/view?usp=sharing",
+      lab:      "https://drive.google.com/file/d/1avpMrf2EBReMS5bsccMytN0xoMFAf6Tt/view?usp=sharing",
+      pretest: "", posttest: "", video: ""
+    }
+  },
+};
+
+
+// ========================================================
+// ⚡ CLASSROOM ELECTRICAL CONTROL - ระบบควบคุมไฟฟ้าในห้องเรียน
+// หมายเหตุ: เป็น Dashboard จำลองสถานะ สามารถต่อยอดส่ง MQTT ไปยัง ESP32/Relay ได้
+// ========================================================
+const ELECTRIC_DEVICES = [
+  { id: "light_front", icon: "💡", name: "ไฟหน้าห้อง", zone: "ZONE-01", power: 120, mqtt: "LEARNX/CLASSROOM/POWER/light_front" },
+  { id: "light_back", icon: "💡", name: "ไฟหลังห้อง", zone: "ZONE-02", power: 120, mqtt: "LEARNX/CLASSROOM/POWER/light_back" },
+  { id: "aircon", icon: "❄️", name: "เครื่องปรับอากาศ", zone: "AC-01", power: 1500, mqtt: "LEARNX/CLASSROOM/POWER/aircon" },
+  { id: "fan", icon: "🌀", name: "พัดลมระบายอากาศ", zone: "FAN-01", power: 80, mqtt: "LEARNX/CLASSROOM/POWER/fan" },
+  { id: "projector", icon: "📽️", name: "โปรเจกเตอร์", zone: "AV-01", power: 300, mqtt: "LEARNX/CLASSROOM/POWER/projector" },
+  { id: "outlet", icon: "🔌", name: "ปลั๊กโต๊ะครู", zone: "OUTLET-01", power: 250, mqtt: "LEARNX/CLASSROOM/POWER/outlet" },
+];
+
+const RESOURCES_PER_UNIT = [
+  { type: "handout",  icon: "📄", label: "ใบความรู้",  color: "blue" },
+  { type: "slide",    icon: "🎬", label: "PowerPoint", color: "orange" },
+  { type: "lab",      icon: "📝", label: "ใบงาน",      color: "green" },
+  { type: "pretest",  icon: "❓", label: "Pre-test",   color: "purple" },
+  { type: "posttest", icon: "✅", label: "Post-test",  color: "pink" },
+  { type: "video",    icon: "▶️", label: "วิดีโอ",     color: "red" },
+];
+</script>
+
+<script src="https://unpkg.com/mqtt/dist/mqtt.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+
+<!-- ============ MAIN SCRIPT ============ -->
+<script>
+// ============= DARK MODE =============
+const themeBtn = document.getElementById('themeBtn');
+const themeBtnMobile = document.getElementById('themeBtnMobile');
+function applyTheme(theme) {
+  document.documentElement.classList.toggle('dark', theme === 'dark');
+  localStorage.setItem('theme', theme);
+}
+function toggleTheme() {
+  const cur = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+  applyTheme(cur === 'dark' ? 'light' : 'dark');
+}
+(function initTheme() {
+  const saved = localStorage.getItem('theme');
+  const sys = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(saved || (sys ? 'dark' : 'light'));
+})();
+themeBtn?.addEventListener('click', toggleTheme);
+themeBtnMobile?.addEventListener('click', toggleTheme);
+
+// ============= BANNER =============
+(function initBanner() {
+  if (CONFIG.banner && !sessionStorage.getItem('bannerClosed')) {
+    document.getElementById('bannerText').textContent = CONFIG.banner;
+    document.getElementById('banner').classList.remove('hidden');
+    document.getElementById('bannerClose').addEventListener('click', () => {
+      document.getElementById('banner').classList.add('hidden');
+      sessionStorage.setItem('bannerClosed', '1');
+    });
+  }
+})();
+
+// ============= DISCORD LINKS =============
+document.querySelectorAll('#discordBtn, #discordBtnHeader').forEach(el => {
+  el.href = CONFIG.discordInvite;
+});
+
+// ============= LAST UPDATED =============
+document.getElementById('lastUpdated').textContent = `อัปเดต: ${CONFIG.lastUpdated}`;
+
+// ============= NEWS =============
+const newsList = document.getElementById('newsList');
+const tagColors = {
+  emerald: 'bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300',
+  blue: 'bg-blue-100 dark:bg-blue-900/40 text-blue-700 dark:text-blue-300',
+  purple: 'bg-purple-100 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300',
+  amber: 'bg-amber-100 dark:bg-amber-900/40 text-amber-700 dark:text-amber-300',
+  rose: 'bg-rose-100 dark:bg-rose-900/40 text-rose-700 dark:text-rose-300',
+};
+NEWS.forEach(n => {
+  const div = document.createElement('a');
+  div.href = n.link || '#';
+  div.className = 'card-hover bg-slate-50 dark:bg-slate-800 rounded-2xl p-5 border border-slate-100 dark:border-slate-700 block';
+  div.innerHTML = `
+    <div class="flex items-center justify-between mb-3">
+      <span class="text-xs px-3 py-1 ${tagColors[n.tagColor] || tagColors.blue} rounded-full font-semibold">${n.tag}</span>
+      <span class="text-xs text-slate-500 dark:text-slate-400">${n.date}</span>
+    </div>
+    <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-2">${n.title}</h3>
+    <p class="text-sm text-slate-600 dark:text-slate-400">${n.desc}</p>
+    <div class="mt-4 text-sm font-semibold text-brand-600 dark:text-brand-400 flex items-center gap-1">
+      อ่านเพิ่มเติม
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+    </div>
+  `;
+  newsList.appendChild(div);
+});
+
+// ============= CONTACT GRID =============
+const contactGrid = document.getElementById('contactGrid');
+const contacts = [
+  { icon: '📧', label: 'Email', value: CONFIG.email, href: `mailto:${CONFIG.email}` },
+  { icon: '💚', label: 'Line', value: CONFIG.line, href: 'https://line.me/ti/p/ILNc59G7so' },
+  { icon: '📱', label: 'โทรศัพท์', value: CONFIG.phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3'), href: `tel:${CONFIG.phone}` },
+  { icon: '👥', label: 'Facebook', value: 'Weerawat Poosommai', href: CONFIG.facebook },
+];
+contacts.forEach(c => {
+  const a = document.createElement('a');
+  a.href = c.href;
+  a.target = c.href.startsWith('http') ? '_blank' : '';
+  a.className = 'card-hover bg-white/10 hover:bg-white/15 backdrop-blur rounded-2xl p-6 text-center';
+  a.innerHTML = `
+    <div class="text-4xl mb-3">${c.icon}</div>
+    <div class="font-bold mb-1">${c.label}</div>
+    <div class="text-sm text-brand-100">${c.value}</div>
+  `;
+  contactGrid.appendChild(a);
+});
+
+// ============= RENDER TEACHERS =============
+const teachersGrid = document.getElementById('teachersGrid');
+if (teachersGrid && typeof TEACHERS !== 'undefined') {
+  Object.entries(TEACHERS).forEach(([id, t]) => {
+    const subjectsByTeacher = SUBJECTS.filter(s => s.teacher === id);
+    const card = document.createElement('div');
+    card.className = 'card-hover bg-slate-50 dark:bg-slate-800 rounded-3xl p-6 border border-slate-100 dark:border-slate-700';
+    card.innerHTML = `
+      <div class="flex items-center gap-4 mb-5">
+        <div class="relative">
+          <div class="w-24 h-24 rounded-2xl bg-gradient-to-br ${t.color} p-1 shadow-xl">
+            <div class="w-full h-full rounded-2xl bg-white dark:bg-slate-700 flex items-center justify-center text-5xl">${t.icon}</div>
+          </div>
+          <div class="absolute -bottom-2 -right-2 bg-yellow-400 text-yellow-900 px-2 py-0.5 rounded-full text-xs font-bold shadow-md">⭐</div>
+        </div>
+        <div class="flex-1 min-w-0">
+          <h3 class="text-xl font-extrabold text-slate-900 dark:text-white">${t.name}</h3>
+          <p class="text-sm text-slate-500 dark:text-slate-400">${t.role}</p>
+        </div>
+      </div>
+      <div class="grid grid-cols-2 gap-2 text-xs mb-5">
+        <div class="bg-white dark:bg-slate-700 rounded-xl p-3"><div class="text-slate-400 mb-0.5">วุฒิ</div><div class="font-semibold text-slate-700 dark:text-slate-100 text-sm">${t.edu}</div></div>
+        <div class="bg-white dark:bg-slate-700 rounded-xl p-3"><div class="text-slate-400 mb-0.5">สาขา</div><div class="font-semibold text-slate-700 dark:text-slate-100 text-sm">${t.dept}</div></div>
+        <div class="bg-white dark:bg-slate-700 rounded-xl p-3"><div class="text-slate-400 mb-0.5">หน้าที่พิเศษ</div><div class="font-semibold text-slate-700 dark:text-slate-100 text-sm">${t.duty}</div></div>
+        <div class="bg-white dark:bg-slate-700 rounded-xl p-3"><div class="text-slate-400 mb-0.5">ภาระงาน</div><div class="font-semibold text-slate-700 dark:text-slate-100 text-sm">${t.workload} • ${t.subjects}</div></div>
+      </div>
+      <div>
+        <div class="text-xs font-semibold text-slate-500 dark:text-slate-400 mb-2">รายวิชาที่สอน</div>
+        <div class="flex flex-wrap gap-1.5">
+          ${subjectsByTeacher.map(s => `<span class="text-xs px-2.5 py-1 bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-full font-mono">${s.icon} ${s.code}</span>`).join('')}
+        </div>
+      </div>
+    `;
+    teachersGrid.appendChild(card);
+  });
+}
+
+// ============= RENDER SUBJECTS =============
+const grid = document.getElementById('subjectGrid');
+SUBJECTS.forEach((s, idx) => {
+  const card = document.createElement('div');
+  card.className = `subj-${s.color} card-hover bg-white dark:bg-slate-800 rounded-3xl overflow-hidden shadow-sm border border-slate-100 dark:border-slate-700 cursor-pointer`;
+  card.innerHTML = `
+    <div class="subj-color h-2"></div>
+    <div class="p-6">
+      <div class="flex items-start justify-between mb-4">
+        <div class="text-5xl">${s.icon}</div>
+        <div class="subj-color-light subj-text px-3 py-1 rounded-full text-xs font-mono font-semibold">${s.code}</div>
+      </div>
+      <h3 class="font-bold text-lg text-slate-900 dark:text-white mb-1 leading-snug">${s.name}</h3>
+      <p class="text-xs text-slate-500 dark:text-slate-400 mb-4 italic">${s.nameEn}</p>
+      <p class="text-sm text-slate-600 dark:text-slate-300 mb-5 line-clamp-3">${s.desc}</p>
+      <div class="grid grid-cols-3 gap-2 text-xs mb-5">
+        <div class="bg-slate-50 dark:bg-slate-700 rounded-lg p-2 text-center"><div class="font-bold text-slate-900 dark:text-white">${s.credit}</div><div class="text-slate-500 dark:text-slate-400">ท-ป-น</div></div>
+        <div class="bg-slate-50 dark:bg-slate-700 rounded-lg p-2 text-center"><div class="font-bold text-slate-900 dark:text-white">${s.hours} ชม.</div><div class="text-slate-500 dark:text-slate-400">/สัปดาห์</div></div>
+        <div class="bg-slate-50 dark:bg-slate-700 rounded-lg p-2 text-center"><div class="font-bold text-slate-900 dark:text-white">${s.units.length}</div><div class="text-slate-500 dark:text-slate-400">หน่วย</div></div>
+      </div>
+      <div class="mb-3">
+        <span class="inline-flex items-center gap-1 text-xs px-2 py-1 bg-slate-100 dark:bg-slate-700 rounded-full text-slate-600 dark:text-slate-300">
+          ${TEACHERS[s.teacher]?.icon || '👨‍🏫'} ${TEACHERS[s.teacher]?.name || ''}
+        </span>
+      </div>
+      <div class="flex items-center justify-between pt-4 border-t border-slate-100 dark:border-slate-700">
+        <div class="text-xs text-slate-500 dark:text-slate-400">
+          <span class="font-semibold text-slate-700 dark:text-slate-200">${s.classGroup}</span><br/>
+          ${s.days.join(', ')} • ${s.room}
+        </div>
+        <div class="subj-text font-semibold text-sm flex items-center gap-1">
+          ดูเนื้อหา
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+        </div>
+      </div>
+    </div>
+  `;
+  card.addEventListener('click', () => openModal(idx));
+  grid.appendChild(card);
+});
+
+// ============= MODAL =============
+const modal = document.getElementById('modal');
+const modalCode = document.getElementById('modalCode');
+const modalTitle = document.getElementById('modalTitle');
+const modalMeta = document.getElementById('modalMeta');
+const modalHeader = document.getElementById('modalHeader');
+const modalContent = document.getElementById('modalContent');
+const weekList = document.getElementById('weekList');
+let currentSubject = null;
+let currentWeek = 0;
+
+function openModal(idx, week = 0) {
+  currentSubject = SUBJECTS[idx];
+  currentWeek = week;
+  modalCode.textContent = currentSubject.code;
+  modalTitle.textContent = `${currentSubject.icon}  ${currentSubject.name}`;
+  modalMeta.textContent = `${currentSubject.classGroup} • ${currentSubject.credit} • ${currentSubject.hours} ชม./สัปดาห์ • ${currentSubject.room}`;
+  modalHeader.className = `subj-${currentSubject.color} px-6 py-5 border-b border-slate-100 dark:border-slate-700 flex items-center justify-between`;
+
+  weekList.innerHTML = '';
+  for (let w = 0; w < currentSubject.units.length; w++) {
+    const pill = document.createElement('button');
+    const isActive = w === currentWeek;
+    pill.className = `week-pill subj-${currentSubject.color} ${isActive ? 'subj-color text-white' : 'bg-white dark:bg-slate-700 text-slate-700 dark:text-slate-200 hover:subj-color-light'} flex-shrink-0 px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-600 text-sm font-medium whitespace-nowrap shadow-sm`;
+    pill.textContent = `สัปดาห์ ${w + 1}`;
+    pill.addEventListener('click', () => selectWeek(w));
+    weekList.appendChild(pill);
+  }
+  renderContent();
+  modal.classList.remove('hidden'); modal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+}
+
+function selectWeek(w) {
+  currentWeek = w;
+  Array.from(weekList.children).forEach((p, i) => {
+    p.classList.toggle('subj-color', i === w);
+    p.classList.toggle('text-white', i === w);
+    p.classList.toggle('bg-white', i !== w);
+    p.classList.toggle('dark:bg-slate-700', i !== w);
+    p.classList.toggle('text-slate-700', i !== w);
+    p.classList.toggle('dark:text-slate-200', i !== w);
+  });
+  renderContent();
+}
+
+function renderContent() {
+  const unit = currentSubject.units[currentWeek];
+  const isExam = unit.includes('สอบ');
+  const weekNum = currentWeek + 1;
+  const materials = MATERIALS[currentSubject.code]?.[weekNum] || {};
+
+  let html = `
+    <div class="mb-6 pb-6 border-b border-slate-100 dark:border-slate-700">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="subj-${currentSubject.color}">
+          <div class="subj-color w-12 h-12 rounded-2xl flex items-center justify-center text-white font-bold text-lg">${weekNum}</div>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider">สัปดาห์ที่ ${weekNum}</div>
+          <h4 class="text-xl font-bold text-slate-900 dark:text-white">${unit}</h4>
+        </div>
+      </div>
+      ${materials.folder ? `
+      <a href="${materials.folder}" target="_blank" rel="noopener"
+         class="mt-2 flex items-center justify-between gap-3 bg-gradient-to-r from-yellow-50 to-amber-50 dark:from-yellow-900/30 dark:to-amber-900/30 border-2 border-yellow-300 dark:border-yellow-700 rounded-2xl px-5 py-4 hover:shadow-lg hover:scale-[1.01] transition-all group">
+        <div class="flex items-center gap-3 min-w-0">
+          <div class="w-12 h-12 bg-yellow-500 rounded-2xl flex items-center justify-center text-white text-2xl flex-shrink-0">📁</div>
+          <div class="min-w-0">
+            <div class="font-bold text-slate-900 dark:text-white group-hover:text-yellow-700 dark:group-hover:text-yellow-300">เปิดโฟลเดอร์สัปดาห์ที่ ${weekNum} บน Google Drive</div>
+            <div class="text-xs text-slate-600 dark:text-slate-300">เข้าถึงไฟล์ทั้งหมดของสัปดาห์นี้ในที่เดียว</div>
+          </div>
+        </div>
+        <svg class="w-6 h-6 text-yellow-600 dark:text-yellow-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+      </a>` : ''}
+    </div>
+  `;
+
+  if (isExam) {
+    html += `
+      <div class="bg-yellow-50 dark:bg-yellow-900/20 border-l-4 border-yellow-500 rounded-2xl p-6 text-center">
+        <div class="text-5xl mb-3">📋</div>
+        <h5 class="text-xl font-bold text-slate-900 dark:text-white mb-2">${unit}</h5>
+        <p class="text-slate-600 dark:text-slate-300 mb-4">เตรียมตัวให้พร้อม ทบทวนเนื้อหาที่เรียนผ่านมา</p>
+        <div class="text-sm text-yellow-700 dark:text-yellow-300 bg-yellow-100 dark:bg-yellow-900/40 rounded-lg px-4 py-2 inline-block">⏰ เวลาสอบ: 5 ชั่วโมง</div>
+      </div>
+    `;
+  } else {
+    html += `<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">`;
+    RESOURCES_PER_UNIT.forEach(res => {
+      const url = materials[res.type] || "";
+      const hasLink = url && url.length > 0;
+      const tag = hasLink ? 'a' : 'div';
+      const attrs = hasLink ? `href="${url}" target="_blank" rel="noopener"` : 'title="ยังไม่เผยแพร่"';
+      const statusBadge = hasLink
+        ? '<span class="text-xs px-2 py-0.5 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-700 dark:text-emerald-300 rounded-full">พร้อมใช้งาน</span>'
+        : '<span class="text-xs px-2 py-0.5 bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 rounded-full">ยังไม่เผยแพร่</span>';
+      html += `
+        <${tag} ${attrs} class="${hasLink ? 'card-hover cursor-pointer' : 'opacity-60 cursor-not-allowed'} bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 rounded-2xl p-5 group block">
+          <div class="flex items-center gap-3 mb-3">
+            <div class="w-12 h-12 bg-${res.color}-100 dark:bg-${res.color}-900/40 rounded-xl flex items-center justify-center text-2xl">${res.icon}</div>
+            <div class="flex-1 min-w-0">
+              <div class="font-semibold text-slate-900 dark:text-white truncate ${hasLink ? 'group-hover:text-brand-600 dark:group-hover:text-brand-400' : ''}">${res.label}</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400">หน่วยที่ ${weekNum}</div>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            ${statusBadge}
+            ${hasLink ? '<svg class="w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>' : ''}
+          </div>
+        </${tag}>
+      `;
+    });
+    html += `</div>`;
+    html += `
+      <div class="mt-6 pt-6 border-t border-slate-100 dark:border-slate-700">
+        <div class="text-sm font-semibold text-slate-700 dark:text-slate-200 mb-3">🔗 เครื่องมือเสริม</div>
+        <div class="flex flex-wrap gap-2">
+          <a href="${CONFIG.discordInvite}" target="_blank" class="px-4 py-2 bg-[#5865F2] text-white text-sm font-medium rounded-lg hover:bg-[#4752C4] transition">💬 Discord</a>
+          <a href="https://forms.google.com" target="_blank" class="px-4 py-2 bg-purple-600 text-white text-sm font-medium rounded-lg hover:bg-purple-700 transition">📝 Google Form</a>
+          <a href="${materials.folder || 'https://drive.google.com/drive/folders/1fKDHtlpeZ1oJXPvXiy4Gq1lef6jKcSB3?usp=drive_link'}" target="_blank" class="px-4 py-2 bg-yellow-600 text-white text-sm font-medium rounded-lg hover:bg-yellow-700 transition">📁 ${materials.folder ? `โฟลเดอร์สัปดาห์ ${weekNum}` : 'Google Drive'}</a>
+        </div>
+      </div>
+    `;
+  }
+  modalContent.innerHTML = html;
+}
+
+function closeModal() {
+  modal.classList.add('hidden'); modal.classList.remove('flex');
+  document.body.style.overflow = '';
+}
+document.getElementById('modalClose').addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') { closeModal(); closeSearch(); } });
+
+// ============= SEARCH =============
+const searchModal = document.getElementById('searchModal');
+const searchInput = document.getElementById('searchInput');
+const searchResults = document.getElementById('searchResults');
+
+function openSearch() {
+  searchModal.classList.remove('hidden'); searchModal.classList.add('flex');
+  searchInput.value = ''; renderSearch('');
+  setTimeout(() => searchInput.focus(), 50);
+  document.body.style.overflow = 'hidden';
+}
+function closeSearch() {
+  searchModal.classList.add('hidden'); searchModal.classList.remove('flex');
+  document.body.style.overflow = '';
+}
+document.getElementById('searchBtn').addEventListener('click', openSearch);
+document.getElementById('searchBtnMobile').addEventListener('click', openSearch);
+document.getElementById('searchClose').addEventListener('click', closeSearch);
+searchModal.addEventListener('click', (e) => { if (e.target === searchModal) closeSearch(); });
+document.addEventListener('keydown', (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') { e.preventDefault(); openSearch(); }
+});
+searchInput.addEventListener('input', () => renderSearch(searchInput.value));
+
+function renderSearch(q) {
+  q = q.trim().toLowerCase();
+  const items = [];
+  SUBJECTS.forEach((s, si) => {
+    if (!q || s.name.toLowerCase().includes(q) || s.nameEn.toLowerCase().includes(q) || s.code.includes(q)) {
+      items.push({ type: 'subject', title: s.name, desc: `${s.code} • ${s.classGroup}`, icon: s.icon, onclick: () => { closeSearch(); openModal(si); } });
+    }
+    s.units.forEach((u, wi) => {
+      if (q && u.toLowerCase().includes(q)) {
+        items.push({ type: 'week', title: u, desc: `${s.icon} ${s.name} • สัปดาห์ที่ ${wi + 1}`, icon: '📅', onclick: () => { closeSearch(); openModal(si, wi); } });
+      }
+    });
+  });
+  if (q && items.length === 0) {
+    searchResults.innerHTML = `<div class="p-8 text-center text-slate-500 dark:text-slate-400">ไม่พบผลลัพธ์สำหรับ "${q}"</div>`;
+    return;
+  }
+  searchResults.innerHTML = items.slice(0, 20).map(it => `
+    <button class="w-full text-left px-4 py-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-700 flex items-center gap-3 search-item">
+      <div class="text-2xl">${it.icon}</div>
+      <div class="flex-1 min-w-0">
+        <div class="font-medium text-slate-900 dark:text-white truncate">${it.title}</div>
+        <div class="text-xs text-slate-500 dark:text-slate-400 truncate">${it.desc}</div>
+      </div>
+    </button>
+  `).join('');
+  Array.from(searchResults.querySelectorAll('.search-item')).forEach((btn, i) => {
+    btn.addEventListener('click', items[i].onclick);
+  });
+}
+
+
+// ============= CLASSROOM ELECTRICAL CONTROL v4 =============
+const electricDeviceGrid = document.getElementById('electricDeviceGrid');
+const electricOnCount = document.getElementById('electricOnCount');
+const electricPowerEstimate = document.getElementById('electricPowerEstimate');
+const electricPayloadPreview = document.getElementById('electricPayloadPreview');
+const ELECTRIC_STORAGE_KEY = 'classroom_electric_state_v1';
+const SCHEDULE_STORAGE_KEY = 'classroom_schedule_v1';
+const POWERLOG_STORAGE_KEY = 'classroom_power_log_v1';
+const ELECTRIC_UNLOCKED_KEY = 'classroom_electric_unlocked';
+
+// ⚠️ SECURITY: รหัส PIN ควรแก้ใน Production
+// ⚠️ MQTT credentials ที่อยู่ในไฟล์นี้ใครก็เห็นได้ ควรย้ายไป Backend Proxy
+const ELECTRIC_PIN = '2569';  // เปลี่ยน PIN ที่นี่
+const ELECTRIC_RATE = 4.5;    // บาทต่อ kWh (อัตราเฉลี่ย MEA สำหรับสถานศึกษา)
+
+const MQTT_CONFIG = {
+  tcpHost: '202.29.231.205',
+  tcpPort: 1883,
+  webSocketUrl: (location.protocol === 'https:' ? 'wss://' : 'ws://') + location.host + '/mqtt',
+  topicBase: 'LEARNX/CLASSROOM/POWER',
+  username: 'iapps',
+  password: 'wat0812661861p',
+  clientId: 'learnx_web_' + Math.random().toString(16).slice(2, 10)
+};
+
+let mqttClient = null;
+let mqttReady = false;
+let isUnlocked = sessionStorage.getItem(ELECTRIC_UNLOCKED_KEY) === '1';
+
+function updateMqttStatus(text, ok = false) {
+  const el = document.getElementById('mqttStatus');
+  if (!el) return;
+  el.textContent = text;
+  el.className = ok
+    ? 'mt-4 px-4 py-3 rounded-2xl bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 text-sm font-semibold'
+    : 'mt-4 px-4 py-3 rounded-2xl bg-rose-100 dark:bg-rose-900/30 text-rose-700 dark:text-rose-300 text-sm font-semibold';
+}
+
+function initMqtt() {
+  if (typeof mqtt === 'undefined') {
+    updateMqttStatus('MQTT: โหลด mqtt.js ไม่สำเร็จ', false);
+    return;
+  }
+  try {
+    mqttClient = mqtt.connect(MQTT_CONFIG.webSocketUrl, {
+      clientId: MQTT_CONFIG.clientId,
+      username: MQTT_CONFIG.username,
+      password: MQTT_CONFIG.password,
+      reconnectPeriod: 3000,
+      connectTimeout: 10000,
+      clean: true,
+      protocolVersion: 4,
+      clean: true
+    });
+    mqttClient.on('connect', () => {
+      mqttReady = true;
+      updateMqttStatus('MQTT: เชื่อมต่อแล้ว ✓ (Subscribe ' + MQTT_CONFIG.topicBase + '/+)', true);
+      // ============= SUBSCRIBE: รับ state จาก ESP32 หรือคนอื่น =============
+      mqttClient.subscribe(MQTT_CONFIG.topicBase + '/+', { qos: 0 }, (err) => {
+        if (err) console.warn('MQTT subscribe error:', err);
+      });
+    });
+    // ============= ON MESSAGE: อัปเดต state เมื่อรับข้อความ =============
+    mqttClient.on('message', (topic, message) => {
+      try {
+        const data = JSON.parse(message.toString());
+        if (data.source === 'learnx-web') return; // ข้ามข้อความที่ตัวเองส่ง
+        const deviceId = topic.split('/').pop();
+        if (ELECTRIC_DEVICES.find(d => d.id === deviceId)) {
+          const newState = (data.state === 'ON' || data.state === true);
+          if (electricState[deviceId] !== newState) {
+            electricState[deviceId] = newState;
+            recordPowerLog(deviceId, newState);
+            saveElectricState();
+            renderElectricControl();
+            console.log(`📡 MQTT ←  ${deviceId}: ${data.state} (จาก ${data.source || 'ภายนอก'})`);
+          }
+        }
+      } catch (err) {
+        console.warn('Parse MQTT message error:', err);
+      }
+    });
+    mqttClient.on('reconnect', () => updateMqttStatus('MQTT: กำลังเชื่อมต่อใหม่...', false));
+    mqttClient.on('close', () => {
+      mqttReady = false;
+      updateMqttStatus('MQTT: หลุดการเชื่อมต่อ', false);
+    });
+    mqttClient.on('error', (err) => {
+      mqttReady = false;
+      const detail = err && err.message ? err.message : 'unknown error';
+      updateMqttStatus('MQTT: เชื่อมต่อไม่ได้ - ' + detail, false);
+      console.warn('MQTT error:', err);
+    });
+    mqttClient.on('offline', () => {
+      mqttReady = false;
+      updateMqttStatus('MQTT: Offline / ตรวจสอบ Reverse Proxy /mqtt', false);
+    });
+    mqttClient.on('disconnect', () => {
+      mqttReady = false;
+      updateMqttStatus('MQTT: Broker ตัดการเชื่อมต่อ', false);
+    });
+  } catch (err) {
+    updateMqttStatus('MQTT: เริ่มต้นไม่สำเร็จ', false);
+    console.warn('MQTT init error:', err);
+  }
+}
+
+function publishElectricCommand(deviceId) {
+  const device = ELECTRIC_DEVICES.find(d => d.id === deviceId);
+  if (!device) return;
+  const payload = {
+    room: 'ROOM211',
+    device_id: device.id,
+    device_name: device.name,
+    zone: device.zone,
+    state: electricState[device.id] ? 'ON' : 'OFF',
+    source: 'learnx-web',
+    timestamp: new Date().toISOString()
+  };
+  if (mqttClient && mqttReady) {
+    mqttClient.publish(device.mqtt, JSON.stringify(payload), { qos: 0, retain: false });
+  }
+  electricPayloadPreview.textContent = JSON.stringify({ topic: device.mqtt, payload }, null, 2);
+}
+let electricState = JSON.parse(localStorage.getItem(ELECTRIC_STORAGE_KEY) || '{}');
+ELECTRIC_DEVICES.forEach(d => { if (typeof electricState[d.id] !== 'boolean') electricState[d.id] = false; });
+
+function saveElectricState() {
+  localStorage.setItem(ELECTRIC_STORAGE_KEY, JSON.stringify(electricState));
+}
+
+function makeElectricPayload(deviceId = 'all') {
+  return {
+    room: 'ROOM211',
+    source: 'classroom-web-dashboard',
+    command: 'set_power',
+    target: deviceId,
+    states: electricState,
+    timestamp: new Date().toISOString()
+  };
+}
+
+function renderElectricControl() {
+  if (!electricDeviceGrid) return;
+  electricDeviceGrid.innerHTML = ELECTRIC_DEVICES.map(d => {
+    const isOn = !!electricState[d.id];
+    return `
+      <div class="rounded-2xl border ${isOn ? 'border-emerald-300 dark:border-emerald-700 bg-emerald-50 dark:bg-emerald-900/20' : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-700/50'} p-5 transition">
+        <div class="flex items-start justify-between gap-3 mb-4">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-2xl ${isOn ? 'bg-emerald-600 text-white' : 'bg-slate-200 dark:bg-slate-600 text-slate-700 dark:text-slate-200'} flex items-center justify-center text-2xl">${d.icon}</div>
+            <div>
+              <div class="font-bold text-slate-900 dark:text-white">${d.name}</div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 font-mono">${d.zone} • ${d.power}W</div>
+            </div>
+          </div>
+          <span class="text-xs px-2 py-1 rounded-full ${isOn ? 'bg-emerald-600 text-white' : 'bg-slate-200 dark:bg-slate-600 text-slate-600 dark:text-slate-300'}">${isOn ? 'ON' : 'OFF'}</span>
+        </div>
+        <button data-electric-toggle="${d.id}" class="w-full px-4 py-2.5 rounded-xl font-semibold transition ${isOn ? 'bg-rose-600 hover:bg-rose-700 text-white' : 'bg-emerald-600 hover:bg-emerald-700 text-white'}">
+          ${isOn ? 'ปิดอุปกรณ์' : 'เปิดอุปกรณ์'}
+        </button>
+      </div>
+    `;
+  }).join('');
+
+  electricDeviceGrid.querySelectorAll('[data-electric-toggle]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (!isUnlocked) { showLockOverlay(); return; }
+      const id = btn.getAttribute('data-electric-toggle');
+      electricState[id] = !electricState[id];
+      recordPowerLog(id, electricState[id]);
+      saveElectricState();
+      renderElectricControl();
+      publishElectricCommand(id);
+    });
+  });
+
+  const onDevices = ELECTRIC_DEVICES.filter(d => electricState[d.id]);
+  electricOnCount.textContent = onDevices.length;
+  electricPowerEstimate.textContent = onDevices.reduce((sum, d) => sum + d.power, 0).toLocaleString('th-TH');
+  electricPayloadPreview.textContent = JSON.stringify(makeElectricPayload(), null, 2);
+}
+
+function setElectricMode(mode) {
+  const modes = {
+    teaching: { light_front: true, light_back: true, aircon: true, fan: true, projector: true, outlet: true },
+    break: { light_front: false, light_back: false, aircon: true, fan: true, projector: false, outlet: false },
+    shutdown: { light_front: false, light_back: false, aircon: false, fan: false, projector: false, outlet: false },
+  };
+  electricState = { ...electricState, ...modes[mode] };
+  saveElectricState();
+  renderElectricControl();
+  ELECTRIC_DEVICES.forEach(d => publishElectricCommand(d.id));
+}
+
+function requireUnlocked(fn) {
+  return () => {
+    if (!isUnlocked) { showLockOverlay(); return; }
+    fn();
+  };
+}
+document.getElementById('electricAllOn')?.addEventListener('click', requireUnlocked(() => {
+  ELECTRIC_DEVICES.forEach(d => {
+    if (!electricState[d.id]) recordPowerLog(d.id, true);
+    electricState[d.id] = true;
+  });
+  saveElectricState(); renderElectricControl();
+  ELECTRIC_DEVICES.forEach(d => publishElectricCommand(d.id));
+}));
+document.getElementById('electricAllOff')?.addEventListener('click', requireUnlocked(() => {
+  ELECTRIC_DEVICES.forEach(d => {
+    if (electricState[d.id]) recordPowerLog(d.id, false);
+    electricState[d.id] = false;
+  });
+  saveElectricState(); renderElectricControl();
+  ELECTRIC_DEVICES.forEach(d => publishElectricCommand(d.id));
+}));
+document.getElementById('modeTeaching')?.addEventListener('click', requireUnlocked(() => setElectricMode('teaching')));
+document.getElementById('modeBreak')?.addEventListener('click', requireUnlocked(() => setElectricMode('break')));
+document.getElementById('modeShutdown')?.addEventListener('click', requireUnlocked(() => setElectricMode('shutdown')));
+
+// Update setElectricMode to log power
+const _origSetMode = setElectricMode;
+setElectricMode = function(mode) {
+  const modes = {
+    teaching: { light_front: true, light_back: true, aircon: true, fan: true, projector: true, outlet: true },
+    break: { light_front: false, light_back: false, aircon: true, fan: true, projector: false, outlet: false },
+    shutdown: { light_front: false, light_back: false, aircon: false, fan: false, projector: false, outlet: false },
+  };
+  Object.entries(modes[mode]).forEach(([id, val]) => {
+    if (electricState[id] !== val) recordPowerLog(id, val);
+    electricState[id] = val;
+  });
+  saveElectricState(); renderElectricControl();
+  ELECTRIC_DEVICES.forEach(d => publishElectricCommand(d.id));
+};
+
+// ===================================================================
+// 🔒 SECURITY LOCK SYSTEM
+// ===================================================================
+const lockOverlay = document.getElementById('electricLockOverlay');
+const userBadge = document.getElementById('electricUserBadge');
+const lockBtn = document.getElementById('electricLockBtn');
+
+function showLockOverlay() {
+  isUnlocked = false;
+  sessionStorage.removeItem(ELECTRIC_UNLOCKED_KEY);
+  lockOverlay?.classList.remove('hidden');
+  lockOverlay?.classList.add('flex');
+  userBadge?.classList.add('hidden');
+  lockBtn?.classList.add('hidden');
+}
+function hideLockOverlay() {
+  isUnlocked = true;
+  sessionStorage.setItem(ELECTRIC_UNLOCKED_KEY, '1');
+  lockOverlay?.classList.add('hidden');
+  lockOverlay?.classList.remove('flex');
+  userBadge?.classList.remove('hidden');
+  lockBtn?.classList.remove('hidden');
+}
+if (isUnlocked) hideLockOverlay(); else showLockOverlay();
+document.getElementById('electricUnlockBtn')?.addEventListener('click', () => {
+  const pin = document.getElementById('electricPin').value.trim();
+  if (pin === ELECTRIC_PIN) {
+    document.getElementById('electricPin').value = '';
+    document.getElementById('electricPinError').classList.add('hidden');
+    hideLockOverlay();
+  } else {
+    document.getElementById('electricPinError').classList.remove('hidden');
+    document.getElementById('electricPin').value = '';
+  }
+});
+document.getElementById('electricPin')?.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') document.getElementById('electricUnlockBtn').click();
+});
+lockBtn?.addEventListener('click', showLockOverlay);
+
+// ===================================================================
+// 📊 POWER USAGE TRACKING
+// ===================================================================
+// log: [{deviceId, power, startTime, endTime}]
+let powerLog = JSON.parse(localStorage.getItem(POWERLOG_STORAGE_KEY) || '[]');
+let activeRuns = {}; // deviceId -> startTime (in-flight runs)
+
+// On load, resume runs for devices that are currently ON
+ELECTRIC_DEVICES.forEach(d => {
+  if (electricState[d.id]) activeRuns[d.id] = Date.now();
+});
+
+function recordPowerLog(deviceId, newState) {
+  const dev = ELECTRIC_DEVICES.find(d => d.id === deviceId);
+  if (!dev) return;
+  const now = Date.now();
+  if (newState && !activeRuns[deviceId]) {
+    activeRuns[deviceId] = now;
+  } else if (!newState && activeRuns[deviceId]) {
+    const startTime = activeRuns[deviceId];
+    delete activeRuns[deviceId];
+    powerLog.push({
+      deviceId, name: dev.name, power: dev.power,
+      startTime, endTime: now, hours: (now - startTime) / 3600000
+    });
+    if (powerLog.length > 1000) powerLog = powerLog.slice(-1000);
+    localStorage.setItem(POWERLOG_STORAGE_KEY, JSON.stringify(powerLog));
+  }
+  updatePowerStats();
+}
+
+function updatePowerStats() {
+  const now = Date.now();
+  const dayStart = new Date(); dayStart.setHours(0,0,0,0);
+  const weekStart = new Date(now - 7*86400000);
+
+  // Include closed logs + active runs
+  let kwhToday = 0, kwhWeek = 0;
+  const daily = {}; // YYYY-MM-DD -> kWh
+
+  function add(start, end, power, target) {
+    const s = Math.max(start, target.getTime());
+    const e = Math.min(end, now);
+    if (e <= s) return 0;
+    return (e - s) / 3600000 * power / 1000;
+  }
+  function dayBucket(start, end, power) {
+    let cur = new Date(start); cur.setHours(0,0,0,0);
+    while (cur.getTime() < end) {
+      const next = new Date(cur); next.setDate(next.getDate()+1);
+      const s = Math.max(start, cur.getTime());
+      const e = Math.min(end, next.getTime());
+      if (e > s) {
+        const k = (e-s)/3600000 * power / 1000;
+        const key = cur.toISOString().slice(0,10);
+        daily[key] = (daily[key]||0) + k;
+      }
+      cur = next;
+    }
+  }
+
+  powerLog.forEach(r => {
+    kwhToday += add(r.startTime, r.endTime, r.power, dayStart);
+    kwhWeek += add(r.startTime, r.endTime, r.power, weekStart);
+    dayBucket(r.startTime, r.endTime, r.power);
+  });
+  // Add active runs
+  Object.entries(activeRuns).forEach(([id, start]) => {
+    const dev = ELECTRIC_DEVICES.find(d => d.id === id);
+    if (!dev) return;
+    kwhToday += add(start, now, dev.power, dayStart);
+    kwhWeek += add(start, now, dev.power, weekStart);
+    dayBucket(start, now, dev.power);
+  });
+
+  document.getElementById('powerKwhToday').textContent = kwhToday.toFixed(2);
+  document.getElementById('powerCostToday').textContent = '฿' + (kwhToday * ELECTRIC_RATE).toFixed(0);
+  document.getElementById('powerKwhWeek').textContent = kwhWeek.toFixed(2);
+
+  // Update chart
+  if (window.powerChart && powerChart.config.type === 'bar') {
+    const days = [];
+    for (let i = 6; i >= 0; i--) {
+      const d = new Date(now - i*86400000);
+      const k = d.toISOString().slice(0,10);
+      days.push({ label: d.toLocaleDateString('th-TH', {weekday:'short'}), value: (daily[k]||0) });
+    }
+    powerChart.data.labels = days.map(d=>d.label);
+    powerChart.data.datasets[0].data = days.map(d=>+d.value.toFixed(3));
+    powerChart.update('none');
+  }
+}
+
+// Chart
+let powerChart;
+function initPowerChart() {
+  if (typeof Chart === 'undefined') return;
+  const ctx = document.getElementById('powerChart');
+  if (!ctx) return;
+  const isDark = () => document.documentElement.classList.contains('dark');
+  powerChart = new Chart(ctx, {
+    type: 'bar',
+    data: { labels: ['','','','','','',''], datasets: [{ label: 'kWh', data: [0,0,0,0,0,0,0], backgroundColor: '#6366f1', borderRadius: 6 }] },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { beginAtZero: true, ticks: { color: isDark()?'#94a3b8':'#64748b' }, grid: { color: isDark()?'rgba(255,255,255,0.05)':'rgba(0,0,0,0.05)' } },
+        x: { ticks: { color: isDark()?'#94a3b8':'#64748b' }, grid: { display: false } }
+      }
+    }
+  });
+  updatePowerStats();
+}
+initPowerChart();
+
+document.getElementById('powerResetBtn')?.addEventListener('click', () => {
+  if (!confirm('รีเซ็ตประวัติการใช้พลังงานทั้งหมด?')) return;
+  powerLog = [];
+  localStorage.removeItem(POWERLOG_STORAGE_KEY);
+  updatePowerStats();
+});
+
+// Update stats every minute (so active runs accumulate)
+setInterval(updatePowerStats, 60000);
+
+// ===================================================================
+// ⏰ SCHEDULE / TIMER
+// ===================================================================
+let schedules = JSON.parse(localStorage.getItem(SCHEDULE_STORAGE_KEY) || '[]');
+let scheduleSelectedDays = new Set();
+let scheduleSelectedAction = null;
+
+const scheduleModal = document.getElementById('scheduleModal');
+const scheduleList = document.getElementById('scheduleList');
+const scheduleEmpty = document.getElementById('scheduleEmpty');
+const scheduleNext = document.getElementById('scheduleNext');
+
+function populateScheduleDevice() {
+  const sel = document.getElementById('scheduleDevice');
+  if (!sel) return;
+  sel.innerHTML = '<option value="all">ทุกอุปกรณ์</option>' +
+    ELECTRIC_DEVICES.map(d => `<option value="${d.id}">${d.icon} ${d.name}</option>`).join('');
+}
+populateScheduleDevice();
+
+function openScheduleModal() {
+  scheduleSelectedDays = new Set();
+  scheduleSelectedAction = null;
+  document.querySelectorAll('.day-btn').forEach(b => {
+    b.classList.remove('bg-indigo-600', 'text-white');
+    b.classList.add('bg-white', 'dark:bg-slate-700');
+  });
+  document.querySelectorAll('.action-btn').forEach(b => {
+    b.classList.remove('bg-emerald-600', 'bg-rose-600', 'text-white');
+  });
+  document.getElementById('scheduleTime').value = '07:30';
+  scheduleModal.classList.remove('hidden');
+  scheduleModal.classList.add('flex');
+  document.body.style.overflow = 'hidden';
+}
+function closeScheduleModal() {
+  scheduleModal.classList.add('hidden');
+  scheduleModal.classList.remove('flex');
+  document.body.style.overflow = '';
+}
+document.getElementById('scheduleAddBtn')?.addEventListener('click', () => {
+  if (!isUnlocked) { showLockOverlay(); return; }
+  openScheduleModal();
+});
+document.getElementById('scheduleModalClose')?.addEventListener('click', closeScheduleModal);
+scheduleModal?.addEventListener('click', e => { if (e.target === scheduleModal) closeScheduleModal(); });
+
+document.querySelectorAll('.day-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const day = parseInt(btn.dataset.day);
+    if (scheduleSelectedDays.has(day)) {
+      scheduleSelectedDays.delete(day);
+      btn.classList.remove('bg-indigo-600', 'text-white');
+    } else {
+      scheduleSelectedDays.add(day);
+      btn.classList.add('bg-indigo-600', 'text-white');
+    }
+  });
+});
+function setDayPreset(days) {
+  scheduleSelectedDays = new Set(days);
+  document.querySelectorAll('.day-btn').forEach(b => {
+    const d = parseInt(b.dataset.day);
+    if (days.includes(d)) b.classList.add('bg-indigo-600', 'text-white');
+    else b.classList.remove('bg-indigo-600', 'text-white');
+  });
+}
+document.getElementById('schedulePresetWeekday')?.addEventListener('click', () => setDayPreset([1,2,3,4,5]));
+document.getElementById('schedulePresetWeekend')?.addEventListener('click', () => setDayPreset([0,6]));
+document.getElementById('schedulePresetAll')?.addEventListener('click', () => setDayPreset([0,1,2,3,4,5,6]));
+
+document.querySelectorAll('.action-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    scheduleSelectedAction = btn.dataset.action;
+    document.querySelectorAll('.action-btn').forEach(b => b.classList.remove('bg-emerald-600', 'bg-rose-600', 'text-white'));
+    btn.classList.add(btn.dataset.action === 'on' ? 'bg-emerald-600' : 'bg-rose-600', 'text-white');
+  });
+});
+
+document.getElementById('scheduleSaveBtn')?.addEventListener('click', () => {
+  const time = document.getElementById('scheduleTime').value;
+  const device = document.getElementById('scheduleDevice').value;
+  if (!time) { alert('กรุณาระบุเวลา'); return; }
+  if (scheduleSelectedDays.size === 0) { alert('กรุณาเลือกวันที่ทำงานอย่างน้อย 1 วัน'); return; }
+  if (!scheduleSelectedAction) { alert('กรุณาเลือกการทำงาน (เปิด/ปิด)'); return; }
+  schedules.push({
+    id: Date.now(),
+    time, days: [...scheduleSelectedDays].sort(),
+    device, action: scheduleSelectedAction,
+    enabled: true,
+  });
+  localStorage.setItem(SCHEDULE_STORAGE_KEY, JSON.stringify(schedules));
+  renderScheduleList();
+  closeScheduleModal();
+});
+
+function renderScheduleList() {
+  if (schedules.length === 0) {
+    scheduleList.innerHTML = '';
+    scheduleEmpty.classList.remove('hidden');
+    scheduleNext.classList.add('hidden');
+    return;
+  }
+  scheduleEmpty.classList.add('hidden');
+  const dayLabel = { 0:'อา', 1:'จ', 2:'อ', 3:'พ', 4:'พฤ', 5:'ศ', 6:'ส' };
+  scheduleList.innerHTML = schedules.map(s => {
+    const dev = s.device === 'all' ? '🌐 ทุกอุปกรณ์' :
+      (() => { const d = ELECTRIC_DEVICES.find(x => x.id === s.device); return d ? d.icon + ' ' + d.name : s.device; })();
+    return `
+      <div class="flex items-center gap-3 p-3 rounded-2xl ${s.enabled ? 'bg-slate-50 dark:bg-slate-700' : 'bg-slate-100 dark:bg-slate-800 opacity-60'}">
+        <div class="text-2xl font-mono font-bold text-indigo-600 dark:text-indigo-400">${s.time}</div>
+        <div class="flex-1 min-w-0">
+          <div class="font-semibold text-sm text-slate-900 dark:text-white truncate">${dev}</div>
+          <div class="text-xs text-slate-500 dark:text-slate-400">
+            ${s.action === 'on' ? '✅ เปิด' : '⛔ ปิด'} • ${s.days.map(d => dayLabel[d]).join(' ')}
+          </div>
+        </div>
+        <button data-schedule-toggle="${s.id}" class="text-xs px-2 py-1 rounded-lg ${s.enabled ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-200 text-slate-500'}">${s.enabled ? 'ON' : 'OFF'}</button>
+        <button data-schedule-del="${s.id}" class="text-rose-500 hover:text-rose-700 p-1">🗑</button>
+      </div>
+    `;
+  }).join('');
+  scheduleList.querySelectorAll('[data-schedule-del]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = parseInt(btn.dataset.scheduleDel);
+      if (!confirm('ลบตารางเวลานี้?')) return;
+      schedules = schedules.filter(x => x.id !== id);
+      localStorage.setItem(SCHEDULE_STORAGE_KEY, JSON.stringify(schedules));
+      renderScheduleList();
+    });
+  });
+  scheduleList.querySelectorAll('[data-schedule-toggle]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = parseInt(btn.dataset.scheduleToggle);
+      const s = schedules.find(x => x.id === id);
+      if (s) {
+        s.enabled = !s.enabled;
+        localStorage.setItem(SCHEDULE_STORAGE_KEY, JSON.stringify(schedules));
+        renderScheduleList();
+      }
+    });
+  });
+  updateNextSchedule();
+}
+function updateNextSchedule() {
+  const enabled = schedules.filter(s => s.enabled);
+  if (enabled.length === 0) { scheduleNext.classList.add('hidden'); return; }
+  const now = new Date();
+  let nextMs = Infinity, nextStr = '';
+  enabled.forEach(s => {
+    const [h, m] = s.time.split(':').map(Number);
+    s.days.forEach(d => {
+      const target = new Date(now);
+      const daysUntil = (d - target.getDay() + 7) % 7;
+      target.setDate(target.getDate() + daysUntil);
+      target.setHours(h, m, 0, 0);
+      if (target <= now) target.setDate(target.getDate() + 7);
+      const diff = target - now;
+      if (diff < nextMs) {
+        nextMs = diff;
+        nextStr = `${target.toLocaleString('th-TH', {weekday:'long', hour:'2-digit', minute:'2-digit'})} • ${s.action === 'on' ? 'เปิด' : 'ปิด'} ${s.device === 'all' ? 'ทุกอุปกรณ์' : ELECTRIC_DEVICES.find(d=>d.id===s.device)?.name}`;
+      }
+    });
+  });
+  if (nextStr) {
+    scheduleNext.textContent = '⏳ ครั้งต่อไป: ' + nextStr;
+    scheduleNext.classList.remove('hidden');
+  }
+}
+
+let lastScheduleCheck = '';
+function checkSchedules() {
+  const now = new Date();
+  const key = now.toISOString().slice(0,16); // ตรงนาทีเท่านั้น (avoid double-fire)
+  if (key === lastScheduleCheck) return;
+  lastScheduleCheck = key;
+  const day = now.getDay();
+  const time = now.toTimeString().slice(0,5);
+  schedules.filter(s => s.enabled && s.days.includes(day) && s.time === time).forEach(s => {
+    const targetState = s.action === 'on';
+    const targets = s.device === 'all' ? ELECTRIC_DEVICES.map(d => d.id) : [s.device];
+    targets.forEach(id => {
+      if (electricState[id] !== targetState) {
+        recordPowerLog(id, targetState);
+        electricState[id] = targetState;
+      }
+    });
+    saveElectricState();
+    renderElectricControl();
+    targets.forEach(id => publishElectricCommand(id));
+    console.log(`⏰ Schedule executed: ${s.time} → ${s.action} ${s.device}`);
+  });
+}
+setInterval(checkSchedules, 10000); // เช็คทุก 10 วินาที
+setInterval(updateNextSchedule, 60000);
+renderScheduleList();
+
+// initMqtt and renderElectricControl
+initMqtt();
+renderElectricControl();
+updatePowerStats();
+
+// ============= MOBILE MENU =============
+document.getElementById('menuBtn').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.toggle('hidden');
+});
+document.querySelectorAll('#mobileMenu a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('mobileMenu').classList.add('hidden'));
+});
+
+console.log("%c👨‍🏫 ห้องเรียนออนไลน์ ครูวีระวัฒน์ ภูสมหมาย v4", "color: #6366f1; font-size: 16px; font-weight: bold;");
+console.log("%cแผนกวิชาเทคโนโลยีอิเล็กทรอนิกส์ วิทยาลัยเทคนิคศรีสะเกษ", "color: #64748b;");
+console.log("%c💡 ค้นหา: Ctrl+K | โหมดสี: 🌙/☀️ | PIN: 2569", "color: #10b981;");
+console.log("%c⚡ v4: + MQTT Subscribe + Schedule + Power Tracking + Security Lock", "color: #f59e0b; font-weight: bold;");
+console.log("%c⚠️ Security Warning: MQTT credentials อยู่ใน client-side JS - ใครก็ดูได้! ใช้ใน production ต้องย้ายไป backend proxy", "color: #ef4444; font-weight: bold;");
+</script>
+
+</body>
+</html>
