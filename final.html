@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ข้อสอบกลางภาค — วิชาระบบสมองกลฝังตัว</title>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+     ⚙️  ตั้งค่าข้อสอบ — คุณครูแก้ตรงนี้ได้เลย (ไม่ต้องกดปุ่มตั้งค่าบนหน้าจอ)
+     ───────────────────────────────────────────────────────────────────────
+     วิธีแก้: เปิดไฟล์นี้ด้วย Notepad (Windows) หรือ TextEdit (Mac)
+             แก้เฉพาะข้อความในเครื่องหมาย " "  หรือ ตัวเลข ของแต่ละบรรทัด
+             แล้วบันทึกไฟล์ (Ctrl+S / Cmd+S) — เปิดไฟล์ใหม่ก็เห็นค่าที่แก้ทันที
+     * ค่าที่แก้ตรงนี้จะมีผลกับ "ทุกเครื่อง" ที่เปิดไฟล์นี้
+     * ระวัง: อย่าลบเครื่องหมาย " " , (จุลภาค) หรือ { } เพราะจะทำให้ไฟล์เสีย
+     ═══════════════════════════════════════════════════════════════════════ -->
+  <script>
+    window.EXAM_CONFIG = {
+
+      // 🔗 URL ของ Google Form  (เปิดฟอร์ม → ส่ง(Send) → ลิงก์ → คัดลอก แล้วต่อท้ายด้วย ?embedded=true)
+      formUrl: "https://forms.gle/EHv9wWtadnDXnNDx7?embedded=true",
+
+      examName: "ข้อสอบกลางภาค",                      // ชื่อข้อสอบ (บรรทัดแรก)
+      subject: "วิชาระบบสมองกลฝังตัว",       // ชื่อวิชา
+      courseInfo: "รหัสวิชา 30105-2002 | หน่วยที่ 1–8",   // รหัสวิชา / หน่วย
+      questionCount: 30,                                    // จำนวนข้อ
+      totalScore: 30,                                    // คะแนนรวม
+      examMinutes: 50,                                    // เวลาสอบ (นาที)
+      className: "ปวส.1 สาขาเทคโนโลยีอิเล็กทรอนิกส์ วิทยาลัยเทคนิคศรีสะเกษ",  // ชั้น/สาขา/สถานศึกษา
+      teacher: "นายวีระวัฒน์ ภูสมหมาย | ครูชำนาญการพิเศษ",  // ชื่อครูผู้ออกข้อสอบ
+
+      closeDelay: 3,        // วินาทีนับถอยหลังก่อนยกเลิกเมื่อจับได้
+      requireLogin: true,     // true = บังคับล็อกอิน Google ก่อนสอบ , false = ไม่ต้องล็อกอิน
+      pin: "1234"    // PIN สำหรับเปิดปุ่มตั้งค่า ⚙️ (กันนักเรียนแก้)
+
+    };
+  </script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'TH SarabunPSK', 'Sarabun', sans-serif;
+      background: #0D1B2A;
+      color: #ECEFF1;
+      height: 100vh;
+      overflow: hidden;
+      user-select: none;
+    }
+
+    /* ── หน้าเริ่มต้น ── */
+    #startScreen {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      height: 100vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      padding: 28px 16px 48px;
+      gap: 18px;
+      background: linear-gradient(135deg, #0D1B2A 0%, #1A237E 100%);
+    }
+
+    #startScreen h1 {
+      font-size: 2.4rem;
+      color: #29B6F6;
+      text-align: center;
+      text-shadow: 0 2px 8px rgba(41, 182, 246, 0.4);
+    }
+
+    #startScreen p {
+      font-size: 1.3rem;
+      color: #90A4AE;
+      text-align: center;
+      max-width: 600px;
+      line-height: 1.8;
+    }
+
+    .info-box {
+      background: rgba(21, 101, 192, 0.25);
+      border: 1px solid #1565C0;
+      border-radius: 12px;
+      padding: 20px 32px;
+      text-align: center;
+      font-size: 1.2rem;
+      line-height: 2;
+      color: #ECEFF1;
+    }
+
+    .warn-box {
+      background: rgba(239, 83, 80, 0.15);
+      border: 1px solid #EF5350;
+      border-radius: 8px;
+      padding: 14px 24px;
+      font-size: 1.1rem;
+      color: #EF9A9A;
+      text-align: center;
+      max-width: 580px;
+    }
+
+    .btn-start {
+      background: linear-gradient(135deg, #1565C0, #29B6F6);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 16px 48px;
+      font-size: 1.4rem;
+      font-family: inherit;
+      cursor: pointer;
+      box-shadow: 0 4px 20px rgba(41, 182, 246, 0.35);
+      transition: transform 0.15s, box-shadow 0.15s;
+    }
+
+    .btn-start:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 28px rgba(41, 182, 246, 0.5);
+    }
+
+    .btn-start:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    /* ── กล่องขั้นตอนล็อกอิน Google ── */
+    .login-box {
+      background: rgba(255, 179, 0, 0.08);
+      border: 1px solid #FFB300;
+      border-radius: 12px;
+      padding: 18px 24px;
+      max-width: 580px;
+      text-align: left;
+    }
+
+    .login-box .login-title {
+      color: #FFD54F;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    .login-steps {
+      margin: 0 0 14px 20px;
+      color: #ECEFF1;
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+
+    .btn-login {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, #F9A825, #FFCA28);
+      color: #3E2723;
+      border: none;
+      border-radius: 10px;
+      padding: 12px;
+      font-size: 1.15rem;
+      font-family: inherit;
+      font-weight: bold;
+      cursor: pointer;
+      transition: box-shadow 0.15s;
+    }
+
+    .btn-login:hover {
+      box-shadow: 0 4px 16px rgba(255, 202, 40, 0.4);
+    }
+
+    .login-confirm {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+      color: #ECEFF1;
+      font-size: 1.05rem;
+      cursor: pointer;
+    }
+
+    .login-confirm input {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    .chk-inline {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #ECEFF1;
+      font-size: 1.02rem;
+      cursor: pointer;
+    }
+
+    .chk-inline input {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    /* ── หน้าสอบ (iframe) ── */
+    #examScreen {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #fff;
+      z-index: 10;
+    }
+
+    #examScreen iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ── Status bar ด้านบน ── */
+    #statusBar {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 36px;
+      background: #1A237E;
+      z-index: 20;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 16px;
+      font-size: 1rem;
+    }
+
+    #statusBar span {
+      color: #90A4AE;
+    }
+
+    #statusBar strong {
+      color: #29B6F6;
+    }
+
+    #timer {
+      color: #FFD54F;
+      font-weight: bold;
+      font-size: 1.1rem;
+    }
+
+    /* ── Overlay เตือน ── */
+    #overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    #overlay .icon {
+      font-size: 5rem;
+    }
+
+    #overlay h2 {
+      font-size: 2rem;
+      color: #EF5350;
+    }
+
+    #overlay p {
+      font-size: 1.3rem;
+      color: #ECEFF1;
+      text-align: center;
+    }
+
+    #countdown {
+      font-size: 3rem;
+      color: #FF7043;
+      font-weight: bold;
+    }
+
+    /* ── หน้าปิดการสอบ ── */
+    #closedScreen {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      gap: 16px;
+      background: #1A0000;
+    }
+
+    #closedScreen h2 {
+      font-size: 2.2rem;
+      color: #EF5350;
+    }
+
+    #closedScreen p {
+      font-size: 1.3rem;
+      color: #90A4AE;
+      text-align: center;
+    }
+
+    /* ── ปุ่มตั้งค่าครู ── */
+    #gearBtn {
+      position: fixed;
+      top: 14px;
+      right: 16px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      color: #90A4AE;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 1rem;
+      font-family: inherit;
+      cursor: pointer;
+      z-index: 5;
+      transition: color 0.15s, border-color 0.15s;
+    }
+
+    #gearBtn:hover {
+      color: #29B6F6;
+      border-color: #29B6F6;
+    }
+
+    /* ── หน้าตั้งค่าครู ── */
+    #settingsScreen {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #0D1B2A;
+      z-index: 50;
+      overflow-y: auto;
+      padding: 28px 16px 40px;
+    }
+
+    .settings-card {
+      max-width: 640px;
+      margin: 0 auto;
+      background: rgba(21, 101, 192, 0.12);
+      border: 1px solid #1565C0;
+      border-radius: 16px;
+      padding: 26px 26px 30px;
+    }
+
+    .settings-card h2 {
+      color: #29B6F6;
+      font-size: 1.8rem;
+      margin-bottom: 4px;
+      text-align: center;
+    }
+
+    .settings-card .sub {
+      color: #90A4AE;
+      text-align: center;
+      margin-bottom: 22px;
+      font-size: 1rem;
+    }
+
+    .field {
+      margin-bottom: 15px;
+    }
+
+    .field label {
+      display: block;
+      color: #B0BEC5;
+      font-size: 1.05rem;
+      margin-bottom: 6px;
+    }
+
+    .field input,
+    .field textarea {
+      width: 100%;
+      background: #0D1B2A;
+      border: 1px solid #37474F;
+      color: #ECEFF1;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 1.05rem;
+      font-family: inherit;
+    }
+
+    .field input:focus,
+    .field textarea:focus {
+      outline: none;
+      border-color: #29B6F6;
+    }
+
+    .field textarea {
+      resize: vertical;
+      min-height: 58px;
+    }
+
+    .field small {
+      color: #607D8B;
+      font-size: 0.85rem;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .row2 {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .row2 .field {
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .settings-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .btn-save {
+      flex: 2;
+      background: linear-gradient(135deg, #2E7D32, #66BB6A);
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 1.2rem;
+      font-family: inherit;
+      cursor: pointer;
+      transition: box-shadow 0.15s;
+    }
+
+    .btn-save:hover {
+      box-shadow: 0 6px 20px rgba(102, 187, 106, 0.35);
+    }
+
+    .btn-cancel {
+      flex: 1;
+      background: transparent;
+      color: #90A4AE;
+      border: 1px solid #37474F;
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 1.1rem;
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    .btn-cancel:hover {
+      color: #ECEFF1;
+      border-color: #90A4AE;
+    }
+
+    .settings-msg {
+      text-align: center;
+      margin-top: 14px;
+      font-size: 1.05rem;
+      min-height: 1.4em;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── หน้าเริ่มต้น ── -->
+  <div id="startScreen">
+    <button id="gearBtn" onclick="openSettings()">⚙️ ตั้งค่า (ครู)</button>
+    <div style="font-size:4rem;">📋</div>
+    <h1 id="ssTitle">ข้อสอบกลางภาค<br>วิชาระบบสมองกลฝังตัว</h1>
+    <div class="info-box">
+      <span id="ssCourse">รหัสวิชา 30100-1018 | หน่วยที่ 1–8</span><br>
+      จำนวน <strong id="ssQCount">30 ข้อ</strong> &nbsp;|&nbsp; คะแนนรวม <strong id="ssScore">30 คะแนน</strong><br>
+      เวลา <strong id="ssTime">50 นาที</strong><br>
+      <span id="ssClass">ปวส.1 สาขาเทคโนโลยีอิเล็กทรอนิกส์ วิทยาลัยเทคนิคศรีสะเกษ</span>
+    </div>
+    <div class="warn-box" id="warnBox">
+      ⚠️ <strong>กฎการสอบ:</strong> ระบบจะเปิดในโหมดเต็มจอ<br>
+      หากออกจากหน้าสอบหรือสลับโปรแกรม <strong>การสอบจะถูกยกเลิกทันที</strong>
+    </div>
+
+    <!-- ── ขั้นตอนล็อกอิน Google (แสดงเมื่อฟอร์มต้องล็อกอิน) ── -->
+    <div id="loginStep" class="login-box" style="display:none;">
+      <div class="login-title">🔑 ขั้นตอนก่อนเริ่มสอบ</div>
+      <ol class="login-steps">
+        <li>กดปุ่มด้านล่างเพื่อ <b>ล็อกอินบัญชี Google ของโรงเรียน</b> (เปิดแท็บใหม่)</li>
+        <li>เมื่อล็อกอินเสร็จ ปิดแท็บนั้นแล้วกลับมาที่หน้านี้</li>
+        <li>ติ๊กยืนยัน แล้วกด “เริ่มทำข้อสอบ”</li>
+      </ol>
+      <button class="btn-login" onclick="openGoogleLogin()">🔑 ล็อกอิน Google (เปิดแท็บใหม่)</button>
+      <label class="login-confirm">
+        <input type="checkbox" id="loginConfirm" onchange="updateStartBtn()">
+        ฉันล็อกอินบัญชี Google ของโรงเรียนเรียบร้อยแล้ว
+      </label>
+    </div>
+
+    <button class="btn-start" id="startBtn" onclick="startExam()">▶ เริ่มทำข้อสอบ</button>
+    <p id="ssTeacher" style="font-size:1rem; color:#546E7A;">นายวีระวัฒน์ ภูสมหมาย | ครูชำนาญการพิเศษ</p>
+  </div>
+
+  <!-- ── หน้าตั้งค่าครู ── -->
+  <div id="settingsScreen">
+    <div class="settings-card">
+      <h2>⚙️ ตั้งค่าข้อสอบ</h2>
+      <div class="sub">สำหรับครูผู้คุมสอบ — ค่าจะถูกบันทึกไว้ในเครื่องนี้</div>
+
+      <div class="field">
+        <label>🔗 URL ของ Google Form</label>
+        <input type="url" id="f_formUrl" placeholder="https://docs.google.com/forms/d/e/.../viewform?embedded=true">
+        <small>เปิดฟอร์ม → ส่ง (Send) → ลิงก์ → คัดลอก แล้วต่อท้ายด้วย <b>?embedded=true</b></small>
+      </div>
+
+      <div class="field">
+        <label>ชื่อข้อสอบ (บรรทัดแรก)</label>
+        <input type="text" id="f_examName" placeholder="ข้อสอบกลางภาค">
+      </div>
+
+      <div class="field">
+        <label>ชื่อวิชา</label>
+        <input type="text" id="f_subject" placeholder="วิชาระบบสมองกลฝังตัว">
+      </div>
+
+      <div class="field">
+        <label>รหัสวิชา / หน่วย</label>
+        <input type="text" id="f_courseInfo" placeholder="รหัสวิชา 30100-1018 | หน่วยที่ 1–8">
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label>จำนวนข้อ</label>
+          <input type="number" id="f_questionCount" min="1" placeholder="30">
+        </div>
+        <div class="field">
+          <label>คะแนนรวม</label>
+          <input type="number" id="f_totalScore" min="1" placeholder="30">
+        </div>
+        <div class="field">
+          <label>เวลา (นาที)</label>
+          <input type="number" id="f_examMinutes" min="1" placeholder="50">
+        </div>
+      </div>
+
+      <div class="field">
+        <label>ชั้น / สาขา / สถานศึกษา</label>
+        <input type="text" id="f_className" placeholder="ปวส.1 สาขา... วิทยาลัย...">
+      </div>
+
+      <div class="field">
+        <label>ชื่อครูผู้ออกข้อสอบ</label>
+        <input type="text" id="f_teacher" placeholder="นาย... | ครู...">
+      </div>
+
+      <div class="field">
+        <label>การล็อกอิน Google</label>
+        <label class="chk-inline">
+          <input type="checkbox" id="f_requireLogin">
+          บังคับให้นักเรียนล็อกอิน Google ก่อนสอบ (แสดงขั้นตอนล็อกอิน)
+        </label>
+        <small>เปิดไว้ถ้าฟอร์มตั้งค่า “เก็บอีเมล” หรือ “จำกัดเฉพาะบัญชีในองค์กร”</small>
+      </div>
+
+      <div class="row2">
+        <div class="field">
+          <label>หน่วงเวลาปิด (วินาที)</label>
+          <input type="number" id="f_closeDelay" min="1" max="30" placeholder="3">
+          <small>นับถอยหลังก่อนยกเลิกเมื่อจับได้</small>
+        </div>
+        <div class="field">
+          <label>🔒 PIN ครู (กันนักเรียนแก้)</label>
+          <input type="text" id="f_pin" inputmode="numeric" placeholder="1234">
+          <small>ใช้เปิดหน้านี้ครั้งถัดไป</small>
+        </div>
+      </div>
+
+      <div class="settings-actions">
+        <button class="btn-save" onclick="saveSettings()">💾 บันทึก</button>
+        <button class="btn-cancel" onclick="closeSettings()">ยกเลิก</button>
+      </div>
+      <div class="settings-msg" id="settingsMsg"></div>
+    </div>
+  </div>
+
+  <!-- ── Status bar ── -->
+  <div id="statusBar">
+    <span id="statusInfo">📋 ข้อสอบกลางภาค</span>
+    <strong id="timer">⏱ 50:00</strong>
+    <span>⚠️ ห้ามสลับหน้าต่าง</span>
+  </div>
+
+  <!-- ── หน้าสอบ ── -->
+  <div id="examScreen">
+    <iframe id="examFrame" src="" allow="fullscreen" allowfullscreen></iframe>
+  </div>
+
+  <!-- ── Overlay เตือน ── -->
+  <div id="overlay">
+    <div class="icon">🚫</div>
+    <h2>ออกจากหน้าสอบ!</h2>
+    <p>ตรวจพบการสลับหน้าต่างหรือออกจากโหมดเต็มจอ<br>การสอบจะถูกยกเลิกใน</p>
+    <div id="countdown">3</div>
+    <p style="color:#90A4AE; font-size:1rem;">กรุณาแจ้งครูผู้คุมสอบ</p>
+  </div>
+
+  <!-- ── หน้าปิดการสอบ ── -->
+  <div id="closedScreen">
+    <div style="font-size:4rem;">❌</div>
+    <h2>การสอบถูกยกเลิก</h2>
+    <p>ตรวจพบการสลับหน้าต่างหรือออกจากโหมดเต็มจอ<br>
+      กรุณาแจ้งครูผู้คุมสอบ</p>
+    <p style="color:#546E7A; font-size:1rem; margin-top:8px;">
+      หากเกิดจากความผิดพลาด โปรดแจ้งครูเพื่อรีเซ็ต
+    </p>
+  </div>
+
+  <script>
+    // ──────────────────────────────────────────────────────────
+    //  CONFIG
+    //  * ค่าตั้งต้นที่ครูแก้ได้ อยู่ที่ "หัวไฟล์" (window.EXAM_CONFIG ด้านบนสุด)
+    //  * ค่าที่แก้ในหัวไฟล์จะชนะเสมอ แม้เคยกดบันทึกผ่านปุ่ม ⚙️ มาก่อน
+    //  * ปุ่ม ⚙️ ตั้งค่า ยังใช้ปรับชั่วคราวบนเครื่องนี้ได้ (เก็บใน localStorage)
+    // ──────────────────────────────────────────────────────────
+    const STORAGE_KEY = 'examLockerConfig_v2';
+
+    // ค่าสำรองแบบ hard-code (ใช้ต่อเมื่อลบ EXAM_CONFIG ที่หัวไฟล์ทิ้ง)
+    const BUILTIN = {
+      formUrl: "https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform?embedded=true",
+      examName: "ข้อสอบกลางภาค",
+      subject: "วิชาระบบสมองกลฝังตัว",
+      courseInfo: "รหัสวิชา 30100-1018 | หน่วยที่ 1–8",
+      questionCount: 30,
+      totalScore: 30,
+      examMinutes: 50,
+      className: "ปวส.1 สาขาเทคโนโลยีอิเล็กทรอนิกส์ วิทยาลัยเทคนิคศรีสะเกษ",
+      teacher: "นายวีระวัฒน์ ภูสมหมาย | ครูชำนาญการพิเศษ",
+      closeDelay: 3,
+      requireLogin: true,
+      pin: "1234"
+    };
+
+    // รวมค่าจากหัวไฟล์ (EXAM_CONFIG) ทับค่าสำรอง → นี่คือ "ค่าตั้งต้น" ที่ครูควบคุม
+    const FILE_CONFIG = (window.EXAM_CONFIG && typeof window.EXAM_CONFIG === 'object') ? window.EXAM_CONFIG : {};
+    const DEFAULTS = Object.assign({}, BUILTIN, FILE_CONFIG);
+    const FILE_STAMP = JSON.stringify(FILE_CONFIG);   // ใช้ตรวจว่าหัวไฟล์ถูกแก้หรือไม่
+
+    const ARM_DELAY_MS = 1500;   // เวลารอให้หน้าจอนิ่งก่อนเริ่มจับ (กัน false positive ตอนเข้า fullscreen)
+
+    let CFG = loadConfig();
+
+    function loadConfig() {
+      try {
+        const raw = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+        // ใช้ค่าที่บันทึกผ่านปุ่ม ⚙️ เฉพาะเมื่อค่าหัวไฟล์ยังไม่ถูกแก้
+        // ถ้าครูแก้ EXAM_CONFIG ในไฟล์ → ทิ้งค่าเก่า ใช้ค่าจากไฟล์เสมอ
+        if (raw && raw.stamp === FILE_STAMP && raw.cfg) {
+          return Object.assign({}, DEFAULTS, raw.cfg);
+        }
+        return Object.assign({}, DEFAULTS);
+      } catch (_) {
+        return Object.assign({}, DEFAULTS);
+      }
+    }
+    function persistConfig() {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify({ stamp: FILE_STAMP, cfg: CFG })); }
+      catch (_) { alert('บันทึกไม่สำเร็จ — เบราว์เซอร์บล็อกการเก็บข้อมูล'); }
+    }
+    // ──────────────────────────────────────────────────────────
+
+    // ── ตรวจชนิดอุปกรณ์ / เบราว์เซอร์ ──────────────────────────
+    const UA = navigator.userAgent;
+    const IS_IOS = /iPhone|iPad|iPod/i.test(UA) ||
+      // iPadOS 13+ Safari รายงานตัวเป็น "Macintosh" + มี touch
+      (/Macintosh/.test(UA) && navigator.maxTouchPoints > 1);
+    const IS_ANDROID = /Android/i.test(UA);
+    const IS_MOBILE = IS_IOS || IS_ANDROID ||
+      (navigator.maxTouchPoints > 1 && /Mobi|Tablet/i.test(UA));
+
+    let timerInterval = null;
+    let focusPoll = null;
+    let secondsLeft = 0;
+    let examActive = false;
+    let closingDown = false;
+    let guardsReady = false;   // จริงหลังพ้นช่วง ARM_DELAY_MS
+    let violationCount = 0;
+
+    // ── แสดงผลหน้าเริ่มต้นจากค่า CFG ────────────────────────────
+    function renderStart() {
+      const set = (id, html) => { const el = document.getElementById(id); if (el) el.innerHTML = html; };
+      const esc = (s) => String(s).replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
+
+      set('ssTitle', esc(CFG.examName) + '<br>' + esc(CFG.subject));
+      set('ssCourse', esc(CFG.courseInfo));
+      set('ssQCount', esc(CFG.questionCount) + ' ข้อ');
+      set('ssScore', esc(CFG.totalScore) + ' คะแนน');
+      set('ssTime', esc(CFG.examMinutes) + ' นาที');
+      set('ssClass', esc(CFG.className));
+      set('ssTeacher', esc(CFG.teacher));
+      set('statusInfo', '📋 ' + esc(CFG.examName) + ' ' + esc(CFG.subject));
+      document.title = CFG.examName + ' — ' + CFG.subject;
+
+      // ข้อความกฎการสอบ ปรับตามอุปกรณ์
+      if (IS_MOBILE) {
+        set('warnBox',
+          '⚠️ <strong>กฎการสอบ:</strong> ห้ามออกจากแอปเบราว์เซอร์ระหว่างสอบ<br>' +
+          'หากสลับไปแอปอื่น เปิดแอปแจ้งเตือน หรือล็อกหน้าจอ <strong>การสอบจะถูกยกเลิกทันที</strong>');
+      } else {
+        set('warnBox',
+          '⚠️ <strong>กฎการสอบ:</strong> ระบบจะเปิดในโหมดเต็มจอ<br>' +
+          'หากออกจากหน้าสอบหรือสลับโปรแกรม <strong>การสอบจะถูกยกเลิกทันที</strong>');
+      }
+
+      // ขั้นตอนล็อกอิน Google — แสดงเฉพาะเมื่อฟอร์มต้องล็อกอิน
+      const loginStep = document.getElementById('loginStep');
+      const chk = document.getElementById('loginConfirm');
+      if (loginStep) loginStep.style.display = CFG.requireLogin ? 'block' : 'none';
+      if (chk) chk.checked = false;
+      updateStartBtn();
+    }
+    document.addEventListener('DOMContentLoaded', renderStart);
+    // รีเซ็ตการยืนยันล็อกอินทุกครั้งที่หน้าโผล่ (รวมกรณี reload / กลับจาก bfcache)
+    // กันเบราว์เซอร์ restore ค่า checkbox เดิมทำให้ข้ามขั้นตอนล็อกอิน
+    window.addEventListener('pageshow', () => {
+      const chk = document.getElementById('loginConfirm');
+      if (chk) chk.checked = false;
+      updateStartBtn();
+    });
+
+    // เปิดหน้าล็อกอิน Google ในแท็บใหม่ (ยังไม่เริ่มสอบ = ไม่โดน guard จับ)
+    function openGoogleLogin() {
+      window.open('https://accounts.google.com/', '_blank', 'noopener');
+    }
+
+    // เปิด/ปิดปุ่มเริ่มสอบตามการยืนยันล็อกอิน
+    function updateStartBtn() {
+      const btn = document.getElementById('startBtn');
+      if (!btn) return;
+      if (!CFG.requireLogin) { btn.disabled = false; return; }
+      const chk = document.getElementById('loginConfirm');
+      btn.disabled = !(chk && chk.checked);
+    }
+
+    // ── หน้าตั้งค่าครู ─────────────────────────────────────────
+    function openSettings() {
+      const pin = prompt('🔒 ใส่ PIN ครูเพื่อเปิดหน้าตั้งค่า');
+      if (pin === null) return;                 // กด Cancel
+      if (pin !== String(CFG.pin)) {
+        alert('PIN ไม่ถูกต้อง');
+        return;
+      }
+      // เติมค่าปัจจุบันลงในฟอร์ม
+      const put = (id, v) => { const el = document.getElementById(id); if (el) el.value = v; };
+      put('f_formUrl', CFG.formUrl);
+      put('f_examName', CFG.examName);
+      put('f_subject', CFG.subject);
+      put('f_courseInfo', CFG.courseInfo);
+      put('f_questionCount', CFG.questionCount);
+      put('f_totalScore', CFG.totalScore);
+      put('f_examMinutes', CFG.examMinutes);
+      put('f_className', CFG.className);
+      put('f_teacher', CFG.teacher);
+      put('f_closeDelay', CFG.closeDelay);
+      put('f_pin', CFG.pin);
+      document.getElementById('f_requireLogin').checked = !!CFG.requireLogin;
+      document.getElementById('settingsMsg').textContent = '';
+      document.getElementById('settingsScreen').style.display = 'block';
+    }
+
+    function closeSettings() {
+      document.getElementById('settingsScreen').style.display = 'none';
+    }
+
+    function saveSettings() {
+      const val = (id) => document.getElementById(id).value.trim();
+      const num = (id, min, def) => {
+        const n = parseInt(val(id), 10);
+        return (isNaN(n) || n < min) ? def : n;
+      };
+      const msg = document.getElementById('settingsMsg');
+
+      const formUrl = val('f_formUrl');
+      if (!formUrl) {
+        msg.style.color = '#EF5350';
+        msg.textContent = '⚠️ กรุณาใส่ URL ของ Google Form';
+        return;
+      }
+      const pin = val('f_pin') || '1234';
+
+      CFG = {
+        formUrl,
+        examName: val('f_examName') || DEFAULTS.examName,
+        subject: val('f_subject') || DEFAULTS.subject,
+        courseInfo: val('f_courseInfo') || '',
+        questionCount: num('f_questionCount', 1, DEFAULTS.questionCount),
+        totalScore: num('f_totalScore', 1, DEFAULTS.totalScore),
+        examMinutes: num('f_examMinutes', 1, DEFAULTS.examMinutes),
+        className: val('f_className') || '',
+        teacher: val('f_teacher') || '',
+        closeDelay: num('f_closeDelay', 1, DEFAULTS.closeDelay),
+        requireLogin: document.getElementById('f_requireLogin').checked,
+        pin
+      };
+      persistConfig();
+      renderStart();
+
+      msg.style.color = '#66BB6A';
+      msg.textContent = '✅ บันทึกแล้ว';
+      setTimeout(closeSettings, 900);
+    }
+
+    // ── เริ่มสอบ ──────────────────────────────────────────────
+    function startExam() {
+      // กันเริ่มสอบทั้งที่ยังไม่ได้ตั้งค่า URL ฟอร์ม
+      if (!CFG.formUrl || CFG.formUrl.indexOf('YOUR_FORM_ID') !== -1) {
+        alert('ยังไม่ได้ตั้งค่า URL ของ Google Form\nกรุณากดปุ่ม ⚙️ ตั้งค่า (ครู) ก่อนเริ่มสอบ');
+        return;
+      }
+      // ต้องยืนยันล็อกอิน Google ก่อน (ถ้าฟอร์มต้องล็อกอิน) — กันฟอร์มเด้งไปหน้า login
+      if (CFG.requireLogin) {
+        const chk = document.getElementById('loginConfirm');
+        if (!chk || !chk.checked) {
+          alert('กรุณาล็อกอินบัญชี Google ของโรงเรียนก่อน แล้วติ๊กยืนยัน จึงจะเริ่มสอบได้');
+          return;
+        }
+      }
+      // ขอ Fullscreen แบบ best-effort (iPhone Safari ไม่รองรับ — ข้ามได้)
+      const el = document.documentElement;
+      const reqFS = el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen;
+      if (reqFS) {
+        // requestFullscreen อาจคืน Promise หรือ undefined (Safari เก่า)
+        try {
+          const p = reqFS.call(el);
+          if (p && typeof p.then === 'function') {
+            p.then(launchExam).catch(launchExam);
+          } else {
+            launchExam();
+          }
+        } catch (_) {
+          launchExam();
+        }
+      } else {
+        // iPhone / เบราว์เซอร์ที่ไม่มี Fullscreen API → เปิดสอบต่อโดยพึ่ง visibility guard
+        launchExam();
+      }
+    }
+
+    function launchExam() {
+      secondsLeft = CFG.examMinutes * 60;
+      document.getElementById('startScreen').style.display = 'none';
+      document.getElementById('examFrame').src = CFG.formUrl;
+      document.getElementById('examScreen').style.display = 'block';
+      document.getElementById('statusBar').style.display = 'flex';
+      examActive = true;
+      startTimer();
+      attachGuards();
+
+      // อาวุธ guard หลังหน้าจอนิ่ง (กันการเข้า fullscreen / โหลด iframe ทำให้ blur วูบ)
+      setTimeout(() => { guardsReady = true; }, ARM_DELAY_MS);
+    }
+
+    // ── Timer ──────────────────────────────────────────────────
+    function startTimer() {
+      timerInterval = setInterval(() => {
+        secondsLeft--;
+        const m = String(Math.floor(secondsLeft / 60)).padStart(2, '0');
+        const s = String(secondsLeft % 60).padStart(2, '0');
+        document.getElementById('timer').textContent = `⏱ ${m}:${s}`;
+        if (secondsLeft <= 0) {
+          clearInterval(timerInterval);
+          forceClose("หมดเวลาสอบ");
+        }
+        // เตือนเมื่อเหลือ 5 นาที
+        if (secondsLeft === 300) {
+          document.getElementById('timer').style.color = '#EF5350';
+        }
+      }, 1000);
+    }
+
+    // ── Guards ────────────────────────────────────────────────
+    //  กลยุทธ์ต่างกันตามอุปกรณ์:
+    //   • ทุกแพลตฟอร์ม : visibilitychange = ตัวจับหลัก (สลับแอป/แท็บ/ล็อกจอ)
+    //   • Desktop เท่านั้น: fullscreenchange + document.hasFocus() poll (จับ Alt+Tab)
+    //   • Mobile        : ไม่ใช้ blur/fullscreen เป็น violation เพราะคีย์บอร์ดจอสัมผัส
+    //                     ทำให้ fullscreen หลุด/blur วูบ = false positive
+    function attachGuards() {
+
+      // 1. Page Visibility — เชื่อถือได้ทุกแพลตฟอร์ม (รวม iOS/Android)
+      document.addEventListener('visibilitychange', onVisibilityChange);
+      window.addEventListener('pagehide', onPageHide);
+
+      if (!IS_MOBILE) {
+        // 2. Fullscreen เปลี่ยน (Desktop) — ออก fullscreen = ผิดกฎ
+        document.addEventListener('fullscreenchange', onFullscreenChange);
+        document.addEventListener('webkitfullscreenchange', onFullscreenChange);
+        document.addEventListener('mozfullscreenchange', onFullscreenChange);
+
+        // 3. เสียโฟกัสหน้าต่าง (Desktop) — ใช้ hasFocus() แยกแยะ
+        //    การคลิกเข้า iframe ของฟอร์ม (โฟกัสยังอยู่ในหน้า) ออกจากการนับผิด
+        window.addEventListener('blur', onWindowBlur);
+        focusPoll = setInterval(pollFocus, 1000);
+
+        // 4. บล็อกคีย์อันตราย (Desktop)
+        document.addEventListener('keydown', onKeyDown);
+      }
+
+      // 5. ป้องกัน Right-click ทุกแพลตฟอร์ม
+      document.addEventListener('contextmenu', e => e.preventDefault());
+    }
+
+    function onFullscreenChange() {
+      if (!guardsReady || !examActive || closingDown) return;
+      const isFS = !!(document.fullscreenElement ||
+        document.webkitFullscreenElement ||
+        document.mozFullScreenElement);
+      if (!isFS) {
+        triggerViolation("ออกจากโหมดเต็มจอ");
+      }
+    }
+
+    // Desktop: blur อาจเกิดจากการคลิกเข้า iframe (ปกติ) — รอเช็ค hasFocus ก่อน
+    function onWindowBlur() {
+      if (!guardsReady || !examActive || closingDown) return;
+      setTimeout(checkFocusLost, 200);
+    }
+
+    // Desktop: poll เผื่อ blur ไม่ยิงซ้ำตอนสลับจาก iframe ไปแอปอื่น
+    function pollFocus() {
+      if (!guardsReady || !examActive || closingDown) return;
+      checkFocusLost();
+    }
+
+    // document.hasFocus() = true เมื่อโฟกัสอยู่ในหน้า "หรือ iframe ของฟอร์ม"
+    //                     = false เมื่อสลับไปหน้าต่าง/แอปอื่นจริง
+    function checkFocusLost() {
+      if (!guardsReady || !examActive || closingDown) return;
+      if (!document.hasFocus()) {
+        triggerViolation("สลับไปหน้าต่าง/แอปอื่น");
+      }
+    }
+
+    function onVisibilityChange() {
+      if (!guardsReady || !examActive || closingDown) return;
+      if (document.visibilityState === 'hidden') {
+        triggerViolation("สลับแอป / สลับแท็บ / ล็อกหน้าจอ");
+      }
+    }
+
+    // iOS บางรุ่นยิง pagehide เมื่อออกจากหน้า (persisted = ถูก bfcache พักไว้)
+    function onPageHide(e) {
+      if (!guardsReady || !examActive || closingDown) return;
+      if (e.persisted) {
+        triggerViolation("ออกจากหน้าสอบ");
+      }
+    }
+
+    function onKeyDown(e) {
+      if (!examActive) return;
+      // บล็อก Alt+Tab, Windows/Cmd key, F11 ออก, Alt+F4
+      const blocked = (
+        (e.altKey && e.key === 'Tab') ||
+        (e.metaKey) ||
+        (e.key === 'Meta') ||
+        (e.key === 'F11' && document.fullscreenElement) ||
+        (e.altKey && e.key === 'F4')
+      );
+      if (blocked) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      // Escape ออก fullscreen จะถูกจับโดย fullscreenchange
+    }
+
+    // ── Violation Handler ─────────────────────────────────────
+    function triggerViolation(reason) {
+      if (closingDown) return;
+      violationCount++;
+      console.warn("⚠️ Violation:", reason, "(#" + violationCount + ")");
+      closingDown = true;
+
+      // แสดง overlay countdown
+      const overlay = document.getElementById('overlay');
+      const countEl = document.getElementById('countdown');
+      overlay.style.display = 'flex';
+      clearInterval(timerInterval);
+
+      let count = CFG.closeDelay;
+      countEl.textContent = count;
+      const cd = setInterval(() => {
+        count--;
+        countEl.textContent = count;
+        if (count <= 0) {
+          clearInterval(cd);
+          forceClose(reason);
+        }
+      }, 1000);
+    }
+
+    // ── Force Close ───────────────────────────────────────────
+    function forceClose(reason) {
+      examActive = false;
+      clearInterval(timerInterval);
+      clearInterval(focusPoll);
+
+      // หยุด iframe (เพื่อไม่ให้ submit ได้อีก)
+      document.getElementById('examFrame').src = 'about:blank';
+
+      // ออก fullscreen ถ้าอยู่
+      const exitFS = document.exitFullscreen || document.webkitExitFullscreen || document.mozCancelFullScreen;
+      if (exitFS && (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement)) {
+        try { exitFS.call(document).catch(() => { }); } catch (_) { }
+      }
+
+      // แสดงหน้าปิดสอบ
+      document.getElementById('overlay').style.display = 'none';
+      document.getElementById('examScreen').style.display = 'none';
+      document.getElementById('statusBar').style.display = 'none';
+      document.getElementById('closedScreen').style.display = 'flex';
+
+      console.log("❌ Exam closed:", reason);
+    }
+  </script>
+</body>
+
+</html>
