@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ข้อสอบปลายภาค — หุ่นยนต์อุตสาหกรรม</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    font-family:'TH SarabunPSK','Sarabun',sans-serif;
+    background:#0D1B2A; color:#ECEFF1;
+    height:100vh; overflow:hidden; user-select:none;
+  }
+  #startScreen {
+    display:flex; flex-direction:column; align-items:center;
+    justify-content:center; height:100vh; gap:20px;
+    background:linear-gradient(135deg,#0D1B2A 0%,#1A237E 100%);
+  }
+  #startScreen h1 { font-size:2.2rem; color:#29B6F6; text-align:center; text-shadow:0 2px 8px rgba(41,182,246,0.4); }
+  .info-box {
+    background:rgba(21,101,192,0.25); border:1px solid #1565C0;
+    border-radius:12px; padding:20px 32px; text-align:center;
+    font-size:1.2rem; line-height:2; color:#ECEFF1;
+  }
+  .info-box strong { color:#00E5FF; }
+  .warn-box {
+    background:rgba(239,83,80,0.15); border:1px solid #EF5350;
+    border-radius:8px; padding:14px 24px; font-size:1.1rem;
+    color:#EF9A9A; text-align:center; max-width:580px;
+  }
+  .btn-start {
+    background:linear-gradient(135deg,#1565C0,#29B6F6);
+    color:#fff; border:none; border-radius:10px;
+    padding:16px 48px; font-size:1.4rem; font-family:inherit;
+    cursor:pointer; box-shadow:0 4px 20px rgba(41,182,246,0.35);
+    transition:transform 0.15s,box-shadow 0.15s;
+  }
+  .btn-start:hover { transform:translateY(-2px); box-shadow:0 8px 28px rgba(41,182,246,0.5); }
+  /* ── Code badge ── */
+  .code-badge {
+    background:#00E5FF; color:#0D1B2A; border-radius:8px;
+    padding:6px 18px; font-size:1.1rem; font-weight:bold;
+    font-family:'Courier New',monospace; letter-spacing:2px;
+  }
+  /* ── Status bar ── */
+  #statusBar {
+    display:none; position:fixed; top:0; left:0; right:0; height:38px;
+    background:#1A237E; z-index:20; align-items:center;
+    justify-content:space-between; padding:0 16px; font-size:1rem;
+  }
+  #statusBar span { color:#90A4AE; }
+  #timer { color:#FFD54F; font-weight:bold; font-size:1.1rem; }
+  /* ── Exam screen ── */
+  #examScreen {
+    display:none; position:fixed; inset:0;
+    background:#fff; z-index:10;
+  }
+  #examScreen iframe { width:100%; height:100%; border:none; }
+  /* ── Overlay ── */
+  #overlay {
+    display:none; position:fixed; inset:0;
+    background:rgba(0,0,0,0.93); z-index:999;
+    flex-direction:column; align-items:center;
+    justify-content:center; gap:16px;
+  }
+  #overlay .icon { font-size:5rem; }
+  #overlay h2 { font-size:2rem; color:#EF5350; }
+  #overlay p  { font-size:1.3rem; color:#ECEFF1; text-align:center; }
+  #countdown  { font-size:3.5rem; color:#FF7043; font-weight:bold; }
+  /* ── Closed screen ── */
+  #closedScreen {
+    display:none; flex-direction:column; align-items:center;
+    justify-content:center; height:100vh; gap:16px; background:#1A0000;
+  }
+  #closedScreen h2 { font-size:2.2rem; color:#EF5350; }
+  #closedScreen p  { font-size:1.3rem; color:#90A4AE; text-align:center; }
+</style>
+</head>
+<body>
+
+<!-- ── หน้าเริ่มต้น ── -->
+<div id="startScreen">
+  <div style="font-size:4rem;">🤖</div>
+  <h1>ข้อสอบปลายภาค<br>หุ่นยนต์อุตสาหกรรม</h1>
+  <div class="code-badge">30105-2007</div>
+  <div class="info-box">
+    ครอบคลุมหน่วยที่ 1,2,3,4,5,6,8,14 &nbsp;|&nbsp; จำนวน <strong>65 ข้อ</strong><br>
+    คะแนนรวม <strong>65 คะแนน</strong> &nbsp;|&nbsp; เวลา <strong>100 นาที</strong><br>
+    ปวส.2 (สออ.22) สาขาเทคโนโลยีอิเล็กทรอนิกส์  วิทยาลัยเทคนิคศรีสะเกษ
+  </div>
+  <div class="warn-box">
+    ⚠️ <strong>กฎการสอบ:</strong> ระบบจะเปิดในโหมดเต็มจอ<br>
+    หากออกจากหน้าสอบหรือสลับโปรแกรม <strong>การสอบจะถูกยกเลิกทันที</strong>
+  </div>
+  <button class="btn-start" onclick="startExam()">▶ เริ่มทำข้อสอบ</button>
+  <p style="font-size:1rem;color:#546E7A;">นายวีระวัฒน์ ภูสมหมาย  |  ครูชำนาญการพิเศษ</p>
+</div>
+
+<!-- ── Status bar ── -->
+<div id="statusBar">
+  <span>🤖 ข้อสอบปลายภาค หุ่นยนต์อุตสาหกรรม 30105-2007</span>
+  <strong id="timer">⏱ 60:00</strong>
+  <span>⚠️ ห้ามสลับหน้าต่าง</span>
+</div>
+
+<!-- ── หน้าสอบ ── -->
+<div id="examScreen">
+  <iframe id="examFrame" src="" allow="fullscreen" allowfullscreen></iframe>
+</div>
+
+<!-- ── Overlay ── -->
+<div id="overlay">
+  <div class="icon">🚫</div>
+  <h2>ออกจากหน้าสอบ!</h2>
+  <p>ตรวจพบการสลับหน้าต่างหรือออกจากโหมดเต็มจอ<br>การสอบจะถูกยกเลิกใน</p>
+  <div id="countdown">3</div>
+  <p style="color:#90A4AE;font-size:1rem;">กรุณาแจ้งครูผู้คุมสอบ</p>
+</div>
+
+<!-- ── หน้าปิดการสอบ ── -->
+<div id="closedScreen">
+  <div style="font-size:4rem;">❌</div>
+  <h2>การสอบถูกยกเลิก</h2>
+  <p>ตรวจพบการสลับหน้าต่างหรือออกจากโหมดเต็มจอ<br>กรุณาแจ้งครูผู้คุมสอบ</p>
+  <p style="color:#546E7A;font-size:1rem;margin-top:8px;">หากเกิดจากความผิดพลาด โปรดแจ้งครูเพื่อรีเซ็ต</p>
+</div>
+
+<script>
+// ══ CONFIG — แก้ URL ของ Google Form ที่นี่ ══════════════════
+const FORM_URL    = "https://docs.google.com/forms/d/e/1FAIpQLSezF1WD1y_LmV6iyGCD5rYUbLUyXouvv4WNfbpPyHHw-G6YzA/viewform?embedded=true";
+//  วิธีได้ URL: เปิด Google Form → ส่ง (Send) → ลิงก์ → คัดลอก → เพิ่ม ?embedded=true
+const EXAM_MINUTES = 100;   // เวลาสอบ (นาที)
+const CLOSE_DELAY  = 3;    // วินาทีก่อนปิดเมื่อโดนจับ
+// ═══════════════════════════════════════════════════════════════
+
+let timerInterval = null, secondsLeft = EXAM_MINUTES*60;
+let examActive = false, closingDown = false;
+
+function startExam() {
+  const el = document.documentElement;
+  const req = el.requestFullscreen || el.webkitRequestFullscreen || el.mozRequestFullScreen;
+  if (req) req.call(el).then(launchExam).catch(launchExam);
+  else launchExam();
+}
+function launchExam() {
+  document.getElementById('startScreen').style.display = 'none';
+  document.getElementById('examFrame').src = FORM_URL;
+  document.getElementById('examScreen').style.display = 'block';
+  document.getElementById('statusBar').style.display  = 'flex';
+  examActive = true;
+  startTimer(); attachGuards();
+}
+function startTimer() {
+  timerInterval = setInterval(()=>{
+    secondsLeft--;
+    const m=String(Math.floor(secondsLeft/60)).padStart(2,'0');
+    const s=String(secondsLeft%60).padStart(2,'0');
+    document.getElementById('timer').textContent = `⏱ ${m}:${s}`;
+    if (secondsLeft<=0) { clearInterval(timerInterval); forceClose('หมดเวลาสอบ'); }
+    if (secondsLeft===300) document.getElementById('timer').style.color='#EF5350';
+  },1000);
+}
+function attachGuards() {
+  document.addEventListener('fullscreenchange', onFSChange);
+  document.addEventListener('webkitfullscreenchange', onFSChange);
+  window.addEventListener('blur', onBlur);
+  document.addEventListener('visibilitychange', onVisibility);
+  document.addEventListener('keydown', onKey);
+  document.addEventListener('contextmenu', e=>e.preventDefault());
+}
+function onFSChange() {
+  if (!examActive||closingDown) return;
+  if (!(document.fullscreenElement||document.webkitFullscreenElement)) triggerViolation('ออกจากโหมดเต็มจอ');
+}
+function onBlur() { if (examActive&&!closingDown) triggerViolation('หน้าต่างอื่นมาทับ'); }
+function onVisibility() { if (examActive&&!closingDown&&document.visibilityState==='hidden') triggerViolation('สลับแท็บ'); }
+function onKey(e) {
+  if (!examActive) return;
+  if ((e.altKey&&e.key==='Tab')||e.metaKey||(e.key==='Meta')||(e.altKey&&e.key==='F4')) {
+    e.preventDefault(); e.stopPropagation();
+  }
+}
+function triggerViolation(reason) {
+  if (closingDown) return;
+  closingDown = true;
+  clearInterval(timerInterval);
+  const overlay = document.getElementById('overlay');
+  const countEl = document.getElementById('countdown');
+  overlay.style.display = 'flex';
+  let count = CLOSE_DELAY;
+  countEl.textContent = count;
+  const cd = setInterval(()=>{
+    count--; countEl.textContent = count;
+    if (count<=0) { clearInterval(cd); forceClose(reason); }
+  },1000);
+}
+function forceClose(reason) {
+  examActive = false;
+  clearInterval(timerInterval);
+  document.getElementById('examFrame').src = 'about:blank';
+  const exit = document.exitFullscreen||document.webkitExitFullscreen;
+  if (exit&&(document.fullscreenElement||document.webkitFullscreenElement)) exit.call(document).catch(()=>{});
+  document.getElementById('overlay').style.display    = 'none';
+  document.getElementById('examScreen').style.display = 'none';
+  document.getElementById('statusBar').style.display  = 'none';
+  document.getElementById('closedScreen').style.display = 'flex';
+}
+</script>
+</body>
+</html>
