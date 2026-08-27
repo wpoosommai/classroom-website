@@ -163,7 +163,10 @@ function startTimer() {
 function attachGuards() {
   document.addEventListener('fullscreenchange', onFSChange);
   document.addEventListener('webkitfullscreenchange', onFSChange);
-  window.addEventListener('blur', onBlur);
+  // หมายเหตุ: ไม่ใช้ window 'blur' — event นี้ยิงทุกครั้งที่โฟกัสย้ายเข้าไปใน
+  // iframe ของ Google Form เอง (เช่น คลิกช่องพิมพ์คำตอบ) ทำให้ระบบเข้าใจผิดว่า
+  // มีหน้าต่างอื่นมาทับและปิดข้อสอบทันที ทั้งที่เป็นการทำข้อสอบปกติ
+  // ใช้ fullscreenchange + visibilitychange ตรวจจับการออกจากหน้าสอบจริงแทน
   document.addEventListener('visibilitychange', onVisibility);
   document.addEventListener('keydown', onKey);
   document.addEventListener('contextmenu', e=>e.preventDefault());
@@ -172,7 +175,6 @@ function onFSChange() {
   if (!examActive||closingDown) return;
   if (!(document.fullscreenElement||document.webkitFullscreenElement)) triggerViolation('ออกจากโหมดเต็มจอ');
 }
-function onBlur() { if (examActive&&!closingDown) triggerViolation('หน้าต่างอื่นมาทับ'); }
 function onVisibility() { if (examActive&&!closingDown&&document.visibilityState==='hidden') triggerViolation('สลับแท็บ'); }
 function onKey(e) {
   if (!examActive) return;
